@@ -358,6 +358,72 @@
         details>summary::-webkit-details-marker {
             display: none;
         }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            pointer-events: all;
+            opacity: 1;
+        }
+
+        .mobile-menu-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .mobile-menu-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 85%;
+            max-width: 400px;
+            height: 100%;
+            background: #FFFFFF;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .mobile-menu.active .mobile-menu-content {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1F2937;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu-link:hover {
+            background: #F9F9F9;
+            color: #46C5A7;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -395,9 +461,43 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-textMain text-xl" aria-label="Open Menu">
+                    <button id="mobile-menu-btn" class="text-textMain text-xl" aria-label="Open Menu">
                         <i class="fa-solid fa-bars"></i>
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-overlay"></div>
+            <div class="mobile-menu-content">
+                <div class="flex justify-between items-center p-6 border-b border-gray-100">
+                    <span class="font-bold text-xl">Menu</span>
+                    <button id="mobile-menu-close" class="text-2xl" aria-label="Close Menu">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </div>
+                <div class="p-6 space-y-4">
+                    <a href="#experts" class="mobile-menu-link">
+                        <i class="fa-solid fa-user-md text-primary"></i>
+                        <span>Experts</span>
+                    </a>
+                    <a href="#reviews" class="mobile-menu-link">
+                        <i class="fa-solid fa-star text-primary"></i>
+                        <span>Reviews</span>
+                    </a>
+                    <a href="#faq" class="mobile-menu-link">
+                        <i class="fa-solid fa-question-circle text-primary"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <a href="#safety" class="mobile-menu-link">
+                        <i class="fa-solid fa-shield-halved text-primary"></i>
+                        <span>Safety</span>
+                    </a>
+                    <a href="#download" class="bg-primary text-white px-6 py-3 rounded-full text-center font-semibold mt-4 block">
+                        Get the App
+                    </a>
                 </div>
             </div>
         </div>
@@ -913,6 +1013,57 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        (function() {
+            'use strict';
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            const body = document.body;
+
+            // Open menu
+            function openMenu() {
+                mobileMenu.classList.add('active');
+                body.classList.add('menu-open');
+            }
+
+            // Close menu
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+
+            // Event listeners
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', openMenu);
+            }
+
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', closeMenu);
+            }
+
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', closeMenu);
+            }
+
+            // Close menu when clicking any menu link
+            mobileMenuLinks.forEach(function(link) {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // Close menu on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
 
 </body>
 
