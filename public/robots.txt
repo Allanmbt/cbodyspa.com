@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://cbodyspa.com
-
-# Sitemaps
-Sitemap: https://cbodyspa.com/sitemap.xml
