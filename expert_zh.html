@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>CBODY Expert 合作计划 - 明星签约 / 达人合作 / 优质兼职</title>
+    <meta name="description" content="CBODY 平台 Expert 合作体系介绍。了解明星签约、达人合作与优质兼职的区别与权益。加入我们，成为高品质上门服务专家。">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#46C5A7',
+                        primaryStart: '#39B59A',
+                        primaryEnd: '#46C5A7',
+                        accent: '#C6A667',
+                        textMain: '#1F2937',
+                        textSec: '#6B7280',
+                        bgMain: '#F9F9F9',
+                        bgAlt: '#ECECEC',
+                        pastelPink: '#FFE8EE',
+                        pastelBlue: '#EDF2FF',
+                        pastelOrange: '#FFEED9',
+                        pastelGreen: '#E9F5EF',
+                        gold: '#D4AF37',
+                        goldLight: '#F9F1D8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(70, 197, 167, 0.15)',
+                        'card': '0 4px 24px rgba(0, 0, 0, 0.04)',
+                        'floating': '0 20px 50px rgba(0,0,0,0.08)',
+                        'cute': '0 8px 32px rgba(0, 0, 0, 0.08)',
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #39B59A 0%, #46C5A7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #C6A667 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .fade-in-up {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        /* Scroll hint for table */
+        .scroll-hint {
+            position: relative;
+        }
+
+        .scroll-hint::after {
+            content: '← 左右滑动查看更多 →';
+            position: absolute;
+            bottom: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #6B7280;
+            white-space: nowrap;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .scroll-hint::after {
+                display: none;
+            }
+        }
+
+        /* Cute rounded elements */
+        .cute-card {
+            border-radius: 28px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cute-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cute-badge {
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Better mobile spacing */
+        @media (max-width: 768px) {
+            .mobile-section {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-bgMain text-textMain font-sans antialiased selection:bg-pastelPink selection:text-primary">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" role="navigation">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 cursor-pointer group">
+                    <img src="images/logo.webp" alt="CBODY Logo"
+                        class="h-8 w-auto group-hover:scale-105 transition-transform">
+                    <span class="font-bold text-2xl tracking-tight text-textMain">CBODY</span>
+                </a>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm font-medium text-primary">中文</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header class="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
+            <div class="absolute top-0 right-0 w-full h-full overflow-hidden -z-10">
+                <div
+                    class="absolute top-0 right-0 w-[600px] h-[600px] bg-pastelGreen rounded-full blur-3xl opacity-60 transform translate-x-1/3 -translate-y-1/4">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-pastelPink rounded-full blur-3xl opacity-50 transform -translate-x-1/4 translate-y-1/4">
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center fade-in-up">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white shadow-sm border border-gray-100 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <h2 class="text-xs font-semibold text-textSec uppercase tracking-wider">Expert 合作计划</h2>
+                </div>
+
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6">
+                    CBODY：只和<span class="text-gradient">认真生活的人</span>合作
+                </h1>
+
+                <p class="text-lg text-textSec leading-relaxed mb-8 max-w-2xl mx-auto">
+                    我们打造高品质上门服务平台，与愿意长期合作、注重口碑与自我提升的 Expert 一起，为高净值客户提供有温度、有回头率的体验。
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 text-sm font-medium text-textSec">
+                    <span class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                        <i class="fa-solid fa-check text-primary"></i> 独特的人
+                    </span>
+                    <span class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                        <i class="fa-solid fa-check text-primary"></i> 有情绪价值
+                    </span>
+                    <span class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                        <i class="fa-solid fa-check text-primary"></i> 长期主义
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Comparison Table Section -->
+        <section class="py-16 lg:py-20 bg-white relative z-10 shadow-sm mobile-section">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-textMain mb-3">三类 Expert 权益对比</h2>
+                    <p class="text-textSec">从基础入驻到深度合伙，选择适合你的发展路径</p>
+                </div>
+
+                <div class="relative scroll-hint pb-12 md:pb-0">
+                    <div class="overflow-x-auto rounded-3xl shadow-cute border border-gray-100">
+                        <table class="w-full text-left border-collapse min-w-[800px]">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-gray-50 to-white border-b border-gray-100">
+                                    <th class="p-6 text-sm font-semibold text-textSec w-1/5">维度</th>
+                                    <th
+                                        class="p-6 text-sm font-bold text-textMain w-1/4 bg-goldLight/40 border-t-4 border-gold rounded-tl-3xl">
+                                        <div class="cute-badge bg-gold text-white mb-2 inline-block">Tier A</div>
+                                        <div>明星签约</div>
+                                    </th>
+                                    <th
+                                        class="p-6 text-sm font-bold text-textMain w-1/4 bg-pastelGreen/40 border-t-4 border-primary">
+                                        <div class="cute-badge bg-primary text-white mb-2 inline-block">Tier B</div>
+                                        <div>达人合作</div>
+                                    </th>
+                                    <th
+                                        class="p-6 text-sm font-bold text-textMain w-1/4 bg-gray-50 border-t-4 border-gray-300 rounded-tr-3xl">
+                                        <div class="cute-badge bg-gray-400 text-white mb-2 inline-block">Tier C</div>
+                                        <div>优质兼职</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-textMain divide-y divide-gray-100">
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">合作关系</td>
+                                    <td class="p-6 bg-goldLight/10 font-medium">深度签约 + 重点扶持</td>
+                                    <td class="p-6 bg-pastelGreen/10">中度合作 (内容换流量)</td>
+                                    <td class="p-6 text-textSec">基础合作</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">收入特征</td>
+                                    <td class="p-6 bg-goldLight/10">有下限预期 + 活动奖金</td>
+                                    <td class="p-6 bg-pastelGreen/10">随积极度浮动 + 额外奖励</td>
+                                    <td class="p-6 text-textSec">无收入保障</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">流量与曝光</td>
+                                    <td class="p-6 bg-goldLight/10">首页重点位、专题推荐</td>
+                                    <td class="p-6 bg-pastelGreen/10">搜索靠前、活动页推荐</td>
+                                    <td class="p-6 text-textSec">正常排序</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">视频要求</td>
+                                    <td class="p-6 bg-goldLight/10 font-semibold text-gold">必须配合 (提供脚本/剪辑)</td>
+                                    <td class="p-6 bg-pastelGreen/10 font-semibold text-primary">强烈鼓励 (自发拍摄)</td>
+                                    <td class="p-6 text-textSec">可不主动拍摄</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">平台支持</td>
+                                    <td class="p-6 bg-goldLight/10">全套品牌包装、专属运营</td>
+                                    <td class="p-6 bg-pastelGreen/10">选题策划、数据反馈</td>
+                                    <td class="p-6 text-textSec">基础审核上架</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec rounded-bl-3xl">适合人群</td>
+                                    <td class="p-6 bg-goldLight/10">当做"事业"长期深耕</td>
+                                    <td class="p-6 bg-pastelGreen/10">有表达欲、愿意上镜</td>
+                                    <td class="p-6 text-textSec rounded-br-3xl">技术扎实、利用空档</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tier A Detail -->
+        <section class="py-16 lg:py-20 bg-gradient-to-b from-white to-goldLight/20 mobile-section">
+            <div class="max-w-5xl mx-auto px-6 lg:px-8">
+                <div class="mb-8 text-center md:text-left">
+                    <div class="cute-badge bg-gold text-white mb-4 inline-block">TIER A</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-textMain mb-4">明星签约 Expert</h2>
+                    <p class="text-textSec text-lg max-w-2xl">长期深度合作对象，享受品牌包装、首页重点曝光、流量扶持与额外奖金，是平台重点打造的门面与合伙人。</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="cute-card bg-white p-8 shadow-cute border border-gold/10">
+                        <h3 class="text-xl font-bold text-textMain mb-6 flex items-center gap-3">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold to-accent flex items-center justify-center text-white">
+                                <i class="fa-solid fa-gem text-xl"></i>
+                            </div>
+                            平台提供的支持
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-textMain">个人品牌包装</h4>
+                                    <p class="text-sm text-textSec">封面图、文案由运营团队深度优化</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-textMain">顶级流量扶持</h4>
+                                    <p class="text-sm text-textSec">首页/城市页优先展示</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-textMain">内容与 IP 打造</h4>
+                                    <p class="text-sm text-textSec">提供脚本、拍摄建议，协助剪辑</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-textMain">收入与奖励</h4>
+                                    <p class="text-sm text-textSec">设定收入下限预期，季度奖金</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cute-card bg-white p-8 shadow-cute border border-gray-100">
+                        <h3 class="text-xl font-bold text-textMain mb-6 flex items-center gap-3">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-100 flex items-center justify-center text-textSec">
+                                <i class="fa-solid fa-clipboard-check text-xl"></i>
+                            </div>
+                            义务与要求
+                        </h3>
+                        <ul class="space-y-4 text-textSec">
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-video text-gold mt-1"></i>
+                                <span><strong class="text-textMain">视频配合：</strong>每周至少 X 条素材，必须参与平台推广计划</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-clock text-gold mt-1"></i>
+                                <span><strong class="text-textMain">稳定在线：</strong>保持合理在线时长，无故失约会影响资格</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-handshake text-gold mt-1"></i>
+                                <span><strong class="text-textMain">独家合作：</strong>不得在其他同类上门平台出现</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="cute-card bg-gradient-to-br from-goldLight/50 to-white p-8 shadow-cute border border-gold/20">
+                    <h4 class="font-bold text-gold mb-3 text-lg flex items-center gap-2">
+                        <i class="fa-solid fa-star"></i> 如何成为 A 类?
+                    </h4>
+                    <ul class="grid md:grid-cols-3 gap-4 text-sm text-textSec">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-arrow-up text-primary mt-1"></i>
+                            <span>从 B 类达人升级 (稳定/高分/内容好)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-user-tie text-primary mt-1"></i>
+                            <span>线下已有知名度，平台直接邀约</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-users text-primary mt-1"></i>
+                            <span>特别优质的内部推荐</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tier B Detail -->
+        <section class="py-16 lg:py-20 bg-white mobile-section">
+            <div class="max-w-5xl mx-auto px-6 lg:px-8">
+                <div class="mb-8 text-center md:text-left">
+                    <div class="cute-badge bg-primary text-white mb-4 inline-block">TIER B</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-textMain mb-4">达人合作 Expert</h2>
+                    <p class="text-textSec text-lg max-w-2xl">擅长表达与拍摄内容的优质达人，平台提供选题策划与部分剪辑支持，用作品换来更高曝光与奖励。</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div
+                        class="cute-card bg-gradient-to-br from-pastelGreen to-white p-8 shadow-cute border border-primary/10">
+                        <h3 class="text-xl font-bold text-textMain mb-6">权益与支持</h3>
+                        <ul class="space-y-5">
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-arrow-trend-up text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-textMain mb-1">流量优先</h4>
+                                    <p class="text-sm text-textSec">同城市同类型中，搜索排序与推荐位优先</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-clapperboard text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-textMain mb-1">内容合作</h4>
+                                    <p class="text-sm text-textSec">提供选题、脚本，部分视频协助剪辑</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-gift text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-textMain mb-1">奖励机制</h4>
+                                    <p class="text-sm text-textSec">根据内容表现发放不定期奖金或补贴</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="cute-card bg-white p-8 shadow-cute border border-gray-100">
+                        <h3 class="text-xl font-bold text-textMain mb-6">义务与要求</h3>
+                        <ul class="space-y-4 text-textSec">
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-camera text-primary mt-1"></i>
+                                <span><strong class="text-textMain">短视频产出：</strong>强烈鼓励每周发布内容，主账号需报备</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-user-check text-primary mt-1"></i>
+                                <span><strong class="text-textMain">服务质量：</strong>保持基础在线时长，评分过低将降级</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-ban text-primary mt-1"></i>
+                                <span><strong class="text-textMain">独家性：</strong>不得在其他同类型上门平台出现</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="cute-card bg-gradient-to-br from-pastelBlue to-white p-8 shadow-cute border border-primary/20">
+                    <h4 class="font-bold text-primary mb-2 text-lg flex items-center gap-2">
+                        <i class="fa-solid fa-rocket"></i> 晋升方向
+                    </h4>
+                    <p class="text-textSec">做到 <strong class="text-textMain">稳定在线 + 好评 + 持续内容输出</strong>，有机会获得 A 类签约邀约。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tier C Detail -->
+        <section class="py-16 lg:py-20 bg-bgMain mobile-section">
+            <div class="max-w-5xl mx-auto px-6 lg:px-8">
+                <div class="mb-8 text-center md:text-left">
+                    <div class="cute-badge bg-gray-400 text-white mb-4 inline-block">TIER C</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-textMain mb-4">优质兼职 Expert</h2>
+                    <p class="text-textSec text-lg max-w-2xl">满足平台服务与礼仪标准的基础入驻层级。可一边在实体店工作一边接兼职订单，是平台的"合格队友"。</p>
+                </div>
+
+                <div class="cute-card bg-white p-8 md:p-10 shadow-cute">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-check text-gray-600"></i>
+                                </div>
+                                <h4 class="font-bold text-textMain text-lg">最低标准</h4>
+                            </div>
+                            <p class="text-sm text-textSec pl-13">真实资料、实名认证、清晰照片。基本礼仪与沟通标准。</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-bullhorn text-gray-600"></i>
+                                </div>
+                                <h4 class="font-bold text-textMain text-lg">推广配合</h4>
+                            </div>
+                            <p class="text-sm text-textSec pl-13">提供社媒账号备案，接受平台提供的视频在你的账号上发布。</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-clock text-gray-600"></i>
+                                </div>
+                                <h4 class="font-bold text-textMain text-lg">时间与在线</h4>
+                            </div>
+                            <p class="text-sm text-textSec pl-13">在线时间必须有响应。长期不在线或无订单将被取消合作。</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-shield-halved text-gray-600"></i>
+                                </div>
+                                <h4 class="font-bold text-textMain text-lg">平台独家性</h4>
+                            </div>
+                            <p class="text-sm text-textSec pl-13">不允许在其他同类型上门平台出现。线下店兼职不受限。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Rules -->
+        <section class="py-16 lg:py-20 bg-white mobile-section">
+            <div class="max-w-3xl mx-auto px-6 lg:px-8">
+                <div
+                    class="cute-card bg-gradient-to-br from-pastelPink/60 to-pastelOrange/40 border-2 border-red-200 p-8 md:p-10 shadow-cute">
+                    <h3 class="text-2xl font-bold text-red-800 mb-6 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-exclamation text-red-600 text-xl"></i>
+                        </div>
+                        重要合作规则
+                    </h3>
+                    <div class="space-y-6 text-textMain">
+                        <div class="bg-white/80 rounded-2xl p-6">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-sm font-bold">1</span>
+                                所有员工都必须参与平台推广计划
+                            </h4>
+                            <p class="text-sm text-textSec pl-8">日常在个人账号发布或协助发布内容，是入驻 CBODY 的基本要求，而不是可选项。</p>
+                        </div>
+                        <div class="bg-white/80 rounded-2xl p-6">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-sm font-bold">2</span>
+                                平台强调独特性与唯一性
+                            </h4>
+                            <p class="text-sm text-textSec pl-8">为了保障每位 Expert 的长期价值，<strong class="text-red-700">严禁任何
+                                    Expert 出现在其他同类型上门或到府服务平台。</strong></p>
+                        </div>
+                        <div class="bg-white/80 rounded-2xl p-6">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-sm font-bold">3</span>
+                                不再接纳"只挂名不上线"的账号
+                            </h4>
+                            <p class="text-sm text-textSec pl-8">对于上线时间极少、预订量极少、拒绝配合的账号，CBODY 将不再续约。我们只保留认真、稳定的伙伴。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-8 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center text-xs text-gray-400">
+                &copy; 2025 CBODY. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

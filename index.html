@@ -424,6 +424,175 @@
         body.menu-open {
             overflow: hidden;
         }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 360px;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px) scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .modal-content {
+                padding: 28px;
+                max-width: 380px;
+            }
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .modal-close:hover {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 18px;
+            background: #f9fafb;
+            border-radius: 16px;
+            margin-bottom: 10px;
+            transition: transform 0.2s;
+            border: 1px solid #f3f4f6;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            border-color: #e5e7eb;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .line-bg {
+            background: #06C755;
+            color: white;
+        }
+
+        .wechat-bg {
+            background: #07C160;
+            color: white;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            color: #6b7280;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-line {
+            background: #06C755;
+            color: white;
+        }
+
+        .qr-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 12px;
+            margin-top: 6px;
+            border: 1px solid #e5e7eb;
+            padding: 6px;
+            background: #fff;
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
+            .qr-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
     </style>
 </head>
 
@@ -495,7 +664,8 @@
                         <i class="fa-solid fa-shield-halved text-primary"></i>
                         <span>Safety</span>
                     </a>
-                    <a href="#download" class="bg-primary text-white px-6 py-3 rounded-full text-center font-semibold mt-4 block">
+                    <a href="#download"
+                        class="bg-primary text-white px-6 py-3 rounded-full text-center font-semibold mt-4 block">
                         Get the App
                     </a>
                 </div>
@@ -984,7 +1154,7 @@
                     <h4 class="font-bold mb-4 text-textMain">Company</h4>
                     <ul class="space-y-2 text-sm text-textSec">
                         <li><a href="#" class="hover:text-primary">About CBODY</a></li>
-                        <li><a href="#" class="hover:text-primary">Become an Expert</a></li>
+                        <li><a href="#" id="join-us-link" class="hover:text-primary">Become an Expert</a></li>
                         <li><a href="support.html" class="hover:text-primary">Contact Support</a></li>
                     </ul>
                 </div>
@@ -1016,50 +1186,122 @@
 
     <!-- Mobile Menu JavaScript -->
     <script>
-        (function() {
-            'use strict';
+            (function () {
+                'use strict';
 
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuClose = document.getElementById('mobile-menu-close');
-            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileMenuClose = document.getElementById('mobile-menu-close');
+                const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+                const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+                const body = document.body;
+
+                // Open menu
+                function openMenu() {
+                    mobileMenu.classList.add('active');
+                    body.classList.add('menu-open');
+                }
+
+                // Close menu
+                function closeMenu() {
+                    mobileMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+
+                // Event listeners
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.addEventListener('click', openMenu);
+                }
+
+                if (mobileMenuClose) {
+                    mobileMenuClose.addEventListener('click', closeMenu);
+                }
+
+                if (mobileMenuOverlay) {
+                    mobileMenuOverlay.addEventListener('click', closeMenu);
+                }
+
+                // Close menu when clicking any menu link
+                mobileMenuLinks.forEach(function (link) {
+                    link.addEventListener('click', closeMenu);
+                });
+
+                // Close menu on ESC key
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+            })();
+    </script>
+
+    <!-- Join Us Modal -->
+    <div id="join-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="join-modal-close" class="modal-close" aria-label="Close Modal">
+                <i class="fa-solid fa-times"></i>
+            </button>
+
+            <div class="text-center mb-5">
+                <h3 class="text-lg font-bold text-textMain mb-1">Join Our Team</h3>
+                <p class="text-xs text-textSec">Contact us to become a verified expert</p>
+            </div>
+
+            <!-- Line Contact -->
+            <div class="contact-item">
+                <div class="contact-icon-wrapper line-bg">
+                    <i class="fa-brands fa-line"></i>
+                </div>
+                <div class="contact-label">Contact via Line</div>
+                <a href="https://line.me/ti/p/cMdsAc6Xoz" target="_blank" rel="noopener" class="contact-btn btn-line">
+                    <i class="fa-brands fa-line"></i> Add Line Friend
+                </a>
+            </div>
+
+            <!-- WeChat Contact -->
+            <div class="contact-item">
+                <div class="contact-icon-wrapper wechat-bg">
+                    <i class="fa-brands fa-weixin"></i>
+                </div>
+                <div class="contact-label">Scan WeChat QR Code</div>
+                <img src="https://vhxezkskhovlciajcfos.supabase.co/storage/v1/object/public/upload/wechat_pr.jpg"
+                    alt="WeChat QR Code" class="qr-image" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+            // Join Us Modal Logic
+            const joinLink = document.getElementById('join-us-link');
+            const joinModal = document.getElementById('join-modal');
+            const joinModalClose = document.getElementById('join-modal-close');
             const body = document.body;
 
-            // Open menu
-            function openMenu() {
-                mobileMenu.classList.add('active');
-                body.classList.add('menu-open');
+            function openJoinModal(e) {
+                if (e) e.preventDefault();
+                joinModal.classList.add('active');
+                body.style.overflow = 'hidden';
             }
 
-            // Close menu
-            function closeMenu() {
-                mobileMenu.classList.remove('active');
-                body.classList.remove('menu-open');
+            function closeJoinModal() {
+                joinModal.classList.remove('active');
+                body.style.overflow = '';
             }
 
-            // Event listeners
-            if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', openMenu);
+            if (joinLink) joinLink.addEventListener('click', openJoinModal);
+            if (joinModalClose) joinModalClose.addEventListener('click', closeJoinModal);
+
+            if (joinModal) {
+                joinModal.addEventListener('click', (e) => {
+                    if (e.target === joinModal) closeJoinModal();
+                });
             }
 
-            if (mobileMenuClose) {
-                mobileMenuClose.addEventListener('click', closeMenu);
-            }
-
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.addEventListener('click', closeMenu);
-            }
-
-            // Close menu when clicking any menu link
-            mobileMenuLinks.forEach(function(link) {
-                link.addEventListener('click', closeMenu);
-            });
-
-            // Close menu on ESC key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                    closeMenu();
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && joinModal && joinModal.classList.contains('active')) {
+                    closeJoinModal();
                 }
             });
         })();
