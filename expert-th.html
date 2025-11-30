@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>โปรแกรมพาร์ทเนอร์เอ็กซ์เพิร์ต CBODY – พาร์ตไทม์คุณภาพ / ครีเอเตอร์พาร์ทเนอร์ / สัญญาหลัก</title>
+    <meta name="description" content="แนะนำระดับเอ็กซ์เพิร์ตของ CBODY เปรียบเทียบสิทธิประโยชน์ของ พาร์ตไทม์คุณภาพ, ครีเอเตอร์พาร์ทเนอร์ และเอ็กซ์เพิร์ตสัญญาหลัก ว่าเรื่องรายได้ ลูกค้า และการเติบโตต่างกันอย่างไร">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter + Noto Sans Thai -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#46C5A7',
+                        primaryStart: '#39B59A',
+                        primaryEnd: '#46C5A7',
+                        accent: '#C6A667',
+                        textMain: '#1F2937',
+                        textSec: '#6B7280',
+                        bgMain: '#F9F9F9',
+                        bgAlt: '#ECECEC',
+                        pastelPink: '#FFE8EE',
+                        pastelBlue: '#EDF2FF',
+                        pastelOrange: '#FFEED9',
+                        pastelGreen: '#E9F5EF',
+                        gold: '#D4AF37',
+                        goldLight: '#F9F1D8',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans Thai', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(70, 197, 167, 0.15)',
+                        'card': '0 4px 24px rgba(0, 0, 0, 0.04)',
+                        'floating': '0 20px 50px rgba(0,0,0,0.08)',
+                        'cute': '0 8px 32px rgba(0, 0, 0, 0.08)',
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #39B59A 0%, #46C5A7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #C6A667 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .fade-in-up {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .scroll-hint {
+            position: relative;
+        }
+
+        .scroll-hint::after {
+            content: '← ปัดซ้าย / ขวาเพื่อดูเพิ่มเติม →';
+            position: absolute;
+            bottom: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #6B7280;
+            white-space: nowrap;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .scroll-hint::after {
+                display: none;
+            }
+        }
+
+        .cute-card {
+            border-radius: 28px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cute-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cute-badge {
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-section {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-bgMain text-textMain font-sans antialiased selection:bg-pastelPink selection:text-primary">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" role="navigation">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 cursor-pointer group">
+                    <img src="images/logo.webp" alt="CBODY Logo"
+                        class="h-8 w-auto group-hover:scale-105 transition-transform">
+                    <span class="font-bold text-2xl tracking-tight text-textMain">CBODY</span>
+                </a>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm font-medium text-primary">TH</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header class="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
+            <div class="absolute top-0 right-0 w-full h-full overflow-hidden -z-10">
+                <div
+                    class="absolute top-0 right-0 w-[600px] h-[600px] bg-pastelGreen rounded-full blur-3xl opacity-60 transform translate-x-1/3 -translate-y-1/4">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-pastelPink rounded-full blur-3xl opacity-50 transform -translate-x-1/4 translate-y-1/4">
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center fade-in-up">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white shadow-sm border border-gray-100 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <h2 class="text-xs font-semibold text-textSec uppercase tracking-wider">
+                        โปรแกรมความร่วมมือสำหรับเอ็กซ์เพิร์ต
+                    </h2>
+                </div>
+
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6">
+                    CBODY: สำหรับ <span class="text-gradient">เอ็กซ์เพิร์ตที่ตั้งมาตรฐานตัวเองสูง</span>
+                </h1>
+
+                <p class="text-lg text-textSec leading-relaxed mb-8 max-w-2xl mx-auto">
+                    เราโฟกัสกลุ่มลูกค้าที่จ่ายดีและให้เกียรติคนทำงาน มองระยะยาวเรื่องการร่วมงาน
+                    การกลับใช้ซ้ำ และการเติบโตของรายได้ให้ชัดเจนขึ้น เพื่อให้ทุกชั่วโมงที่คุณทำงาน “คุ้ม” มากขึ้นจริง ๆ
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 text-sm font-medium text-textSec">
+                    <span class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                        <i class="fa-solid fa-check text-primary"></i> ลูกค้าตั๋วสูงกว่า
+                    </span>
+                    <span class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                        <i class="fa-solid fa-check text-primary"></i> กลุ่มลูกค้าที่คัดกรองแล้ว
+                    </span>
+                    <span class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                        <i class="fa-solid fa-check text-primary"></i> ทางเติบโตของรายได้ที่ชัดเจน
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Comparison Table Section -->
+        <section class="py-16 lg:py-20 bg-white relative z-10 shadow-sm mobile-section">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-textMain mb-3">3 ระดับเอ็กซ์เพิร์ต: เส้นทางรายได้และการเติบโต</h2>
+                    <p class="text-textSec">เปรียบเทียบเรื่องประเภทลูกค้า ตั๋วต่อชั่วโมง โอกาสเติบโต และการสนับสนุนจากแพลตฟอร์ม</p>
+                </div>
+
+                <div class="relative scroll-hint pb-12 md:pb-0">
+                    <div class="overflow-x-auto rounded-3xl shadow-cute border border-gray-100">
+                        <table class="w-full text-left border-collapse min-w-[800px]">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-gray-50 to-white border-b border-gray-100">
+                                    <th class="p-6 text-sm font-semibold text-textSec w-1/5">หัวข้อ</th>
+
+                                    <!-- Tier C first -->
+                                    <th
+                                        class="p-6 text-sm font-bold text-textMain w-1/4 bg-gray-50 border-t-4 border-gray-300 rounded-tl-3xl">
+                                        <div class="cute-badge bg-gray-400 text-white mb-2 inline-block">TIER C</div>
+                                        <div>เอ็กซ์เพิร์ตพาร์ตไทม์คุณภาพ</div>
+                                    </th>
+
+                                    <!-- Tier B middle -->
+                                    <th
+                                        class="p-6 text-sm font-bold text-textMain w-1/4 bg-pastelGreen/40 border-t-4 border-primary">
+                                        <div class="cute-badge bg-primary text-white mb-2 inline-block">TIER B</div>
+                                        <div>ครีเอเตอร์พาร์ทเนอร์</div>
+                                    </th>
+
+                                    <!-- Tier A last -->
+                                    <th
+                                        class="p-6 text-sm font-bold text-textMain w-1/4 bg-goldLight/40 border-t-4 border-gold rounded-tr-3xl">
+                                        <div class="cute-badge bg-gold text-white mb-2 inline-block">TIER A</div>
+                                        <div>เอ็กซ์เพิร์ตสัญญาหลัก</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-textMain divide-y divide-gray-100">
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">ประเภทลูกค้า</td>
+                                    <td class="p-6 text-textSec">
+                                        ลูกค้าทั่วไปจากระบบ งานใกล้เคียง ระยะทางสั้น ๆ
+                                    </td>
+                                    <td class="p-6 bg-pastelGreen/10">
+                                        ลูกค้าที่ระบบมองว่าคุณเหมาะสมกว่า + มีโอกาสเป็นลูกค้าซ้ำมากขึ้น
+                                    </td>
+                                    <td class="p-6 bg-goldLight/10 font-medium">
+                                        สมาชิกที่ใช้จ่ายสูง ลูกค้าประจำ และงานเวลายาวที่ออกแบบเป็นพิเศษ
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">โครงสร้างรายได้</td>
+                                    <td class="p-6 text-textSec">
+                                        รายได้ตามจำนวนงาน ไม่มีการการันตีขั้นต่ำ
+                                    </td>
+                                    <td class="p-6 bg-pastelGreen/10">
+                                        รายได้จากงาน + โอกาสรับโบนัสจากคอนเทนต์และแคมเปญของแพลตฟอร์ม
+                                    </td>
+                                    <td class="p-6 bg-goldLight/10">
+                                        มีเป้ารายได้อ้างอิงต่อเดือน + โบนัสรายไตรมาสเมื่อทำได้ตามตกลง
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">การมองเห็นในระบบ</td>
+                                    <td class="p-6 text-textSec">
+                                        แสดงผลตามลำดับมาตรฐาน ได้ทราฟฟิกพื้นฐาน
+                                    </td>
+                                    <td class="p-6 bg-pastelGreen/10">
+                                        ได้อันดับแสดงผลดีกว่า + มีสิทธิ์ถูกดันในหน้าแคมเปญพิเศษ
+                                    </td>
+                                    <td class="p-6 bg-goldLight/10">
+                                        ได้ตำแหน่งเด่นบนหน้าแรก หน้าเมือง และลิสต์คัดพิเศษ
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">เรื่องคอนเทนต์</td>
+                                    <td class="p-6 text-textSec">
+                                        พร้อมช่วยแชร์คอนเทนต์ที่ CBODY เตรียมให้ ลงบนบัญชีของตัวเองในจังหวะที่ตกลงกัน
+                                    </td>
+                                    <td class="p-6 bg-pastelGreen/10 font-semibold text-primary">
+                                        แนะนำให้ลงคอนเทนต์ 2–3 ชิ้นต่อสัปดาห์ บนบัญชีหลักที่ลงทะเบียนกับ CBODY
+                                    </td>
+                                    <td class="p-6 bg-goldLight/10 font-semibold text-gold">
+                                        ต้องร่วมทำคอนเทนต์เป็นเรื่องปกติ CBODY ช่วยทั้งสคริปต์ ไอเดีย และการตัดต่อ
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec">การสนับสนุนจากแพลตฟอร์ม</td>
+                                    <td class="p-6 text-textSec">
+                                        ตรวจข้อมูล โปรไฟล์ และขึ้นระบบให้ครบถ้วน
+                                    </td>
+                                    <td class="p-6 bg-pastelGreen/10">
+                                        ให้ไอเดียคอนเทนต์ บัญชีอ้างอิง และคำแนะนำการถ่ายให้ดูเข้าใจง่าย
+                                    </td>
+                                    <td class="p-6 bg-goldLight/10">
+                                        วางภาพลักษณ์แบรนด์ส่วนตัว ปรับหน้าข้อมูล และมีคนดูแลด้านออปส์โดยเฉพาะ
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50/50 transition-colors">
+                                    <td class="p-6 font-semibold text-textSec rounded-bl-3xl">เหมาะกับใคร</td>
+                                    <td class="p-6 text-textSec rounded-br-3xl md:rounded-br-none">
+                                        คนที่มีงานหลักอยู่แล้ว แต่อยากมีรายได้เสริมแบบยืดหยุ่นเพิ่มอีกช่องทาง
+                                    </td>
+                                    <td class="p-6 bg-pastelGreen/10">
+                                        คนที่โอเคกับการออกกล้อง ทำคอนเทนต์ และอยากใช้ภาพลักษณ์ตัวเองต่อยอดงาน
+                                    </td>
+                                    <td class="p-6 bg-goldLight/10">
+                                        คนที่มองงานสายนี้เป็น “อาชีพหลัก” และอยากสร้างตัวเองเป็นแบรนด์จริง ๆ
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tier A Detail -->
+        <section class="py-16 lg:py-20 bg-gradient-to-b from-white to-goldLight/20 mobile-section">
+            <div class="max-w-5xl mx-auto px-6 lg:px-8">
+                <div class="mb-8 text-center md:text-left">
+                    <div class="cute-badge bg-gold text-white mb-4 inline-block">TIER A</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-textMain mb-4">ระดับ A · เอ็กซ์เพิร์ตสัญญาหลัก</h2>
+                    <p class="text-textSec text-lg max-w-2xl">
+                        กลุ่มพาร์ทเนอร์ระยะยาวของ CBODY คุณจะได้อยู่ในลำดับแรก ๆ สำหรับลูกค้าสมาชิกที่ใช้จ่ายสูง
+                        ลูกค้าประจำ และงานเวลายาวที่ออกแบบให้เหมาะกับสไตล์ของคุณ รายได้มีกรอบเป้าชัดเจน และโดยรวมสูงกว่าระดับ B/C อย่างมีนัยยะ
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="cute-card bg-white p-8 shadow-cute border border-gold/10">
+                        <h3 class="text-xl font-bold text-textMain mb-6 flex items-center gap-3">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold to-accent flex items-center justify-center text-white">
+                                <i class="fa-solid fa-gem text-xl"></i>
+                            </div>
+                            สิ่งที่ CBODY ช่วยซัพพอร์ต
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-textMain">เข้าถึงลูกค้าที่มูลค่าสูงกว่าก่อน</h4>
+                                    <p class="text-sm text-textSec">
+                                        ระบบจะพิจารณาจับคู่คุณกับสมาชิกที่ใช้จ่ายดี ลูกค้าประจำ และงานเวลายาวที่เหมาะกับสไตล์ของคุณก่อนเป็นลำดับต้น ๆ
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-textMain">มีกรอบเป้ารายได้อ้างอิง</h4>
+                                    <p class="text-sm text-textSec">
+                                        มีกรอบเป้ารายได้ต่อเดือนที่ใช้เป็นตัวอ้างอิง และโบนัสรายไตรมาสเมื่อทำได้ตามเป้าที่ตกลงร่วมกัน
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-textMain">ช่วยสร้างแบรนด์ส่วนตัว</h4>
+                                    <p class="text-sm text-textSec">
+                                        ทีมช่วยดูทั้งภาพปก คำบรรยาย และทิศทางคอนเทนต์ ให้ภาพรวมดูพรีเมียมและเป็นตัวคุณที่สุด
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-textMain">พื้นที่โชว์ตัวแบบพิเศษ</h4>
+                                    <p class="text-sm text-textSec">
+                                        ได้พื้นที่โชว์ตัวบนหน้าแรก หน้าเมือง และลิสต์ที่คัดไว้สำหรับกลุ่มลูกค้าที่เหมาะกับคุณโดยเฉพาะ
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cute-card bg-white p-8 shadow-cute border border-gray-100">
+                        <h3 class="text-xl font-bold text-textMain mb-6 flex items-center gap-3">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-100 flex items-center justify-center text-textSec">
+                                <i class="fa-solid fa-clipboard-check text-xl"></i>
+                            </div>
+                            สิ่งที่คาดหวังจากคุณ
+                        </h3>
+                        <ul class="space-y-4 text-textSec">
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-video text-gold mt-1"></i>
+                                <span><strong class="text-textMain">ร่วมทำคอนเทนต์เป็นปกติ:</strong>
+                                    การทำคอนเทนต์เป็นส่วนหนึ่งของการร่วมงาน CBODY จะช่วยทั้งสคริปต์ ตัวอย่าง และการตัดต่อให้</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-clock text-gold mt-1"></i>
+                                <span><strong class="text-textMain">เวลาออนไลน์ที่คงเส้นคงวา:</strong>
+                                    ต้องมีช่วงเวลารับงานที่ชัดเจน และหลีกเลี่ยงการยกเลิกงานกะทันหันหรือไม่ไปตามนัด</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-handshake text-gold mt-1"></i>
+                                <span><strong class="text-textMain">ความเป็นเอกสิทธิ์ของแพลตฟอร์ม:</strong>
+                                    ไม่สามารถไปปรากฏบนแพลตฟอร์มเรียกเอ็กซ์เพิร์ตประเภทเดียวกันรายอื่น
+                                    (ยกเว้นพันธมิตรหรือสถานที่ที่ CBODY อนุมัติเป็นกรณีพิเศษ)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="cute-card bg-gradient-to-br from-goldLight/50 to-white p-8 shadow-cute border border-gold/20">
+                    <h4 class="font-bold text-gold mb-3 text-lg flex items-center gap-2">
+                        <i class="fa-solid fa-star"></i> เส้นทางขึ้นระดับ A ต้องทำอย่างไร?
+                    </h4>
+                    <ul class="grid md:grid-cols-3 gap-4 text-sm text-textSec">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-arrow-up text-primary mt-1"></i>
+                            <span>ไต่จากระดับ B ขึ้นมา โดยมีเวลาออนไลน์และรีวิวที่ดีสม่ำเสมอ
+                                พร้อมคอนเทนต์คุณภาพ</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-user-tie text-primary mt-1"></i>
+                            <span>มีฐานลูกค้า หรือมีตัวตนบนโซเชียลชัดเจน
+                                แล้วถูก CBODY เชิญเข้าร่วมโดยตรง</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-users text-primary mt-1"></i>
+                            <span>ได้รับการแนะนำจากพาร์ทเนอร์ หรือสถานประกอบการที่เราไว้วางใจ</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tier B Detail -->
+        <section class="py-16 lg:py-20 bg-white mobile-section">
+            <div class="max-w-5xl mx-auto px-6 lg:px-8">
+                <div class="mb-8 text-center md:text-left">
+                    <div class="cute-badge bg-primary text-white mb-4 inline-block">TIER B</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-textMain mb-4">ระดับ B · ครีเอเตอร์พาร์ทเนอร์</h2>
+                    <p class="text-textSec text-lg max-w-2xl">
+                        ใช้คอนเทนต์ดึงดูดลูกค้าที่ใช่ และสร้างตั๋วที่สูงขึ้น CBODY ช่วยคุณทั้งไอเดีย
+                        บัญชีตัวอย่าง และการปรับคอนเทนต์เบื้องต้น ระดับนี้คือทางหลักไปสู่การเป็นเอ็กซ์เพิร์ตสัญญาหลักในอนาคต
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div
+                        class="cute-card bg-gradient-to-br from-pastelGreen to-white p-8 shadow-cute border border-primary/10">
+                        <h3 class="text-xl font-bold text-textMain mb-6">สิทธิประโยชน์ & การสนับสนุน</h3>
+                        <ul class="space-y-5">
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-arrow-trend-up text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-textMain mb-1">ลูกค้าที่แมตช์ขึ้น และตำแหน่งดีกว่า</h4>
+                                    <p class="text-sm text-textSec">
+                                        การมองเห็นที่มากขึ้นในผลค้นหาและหน้ารวม ทำให้มีโอกาสเจอลูกค้าที่เหมาะกับสไตล์คุณมากกว่าเดิม
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-clapperboard text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-textMain mb-1">ไอเดียคอนเทนต์พร้อมทางลัด</h4>
+                                    <p class="text-sm text-textSec">
+                                        เราแนะนำธีมคอนเทนต์ บัญชีให้ดูเป็นตัวอย่าง
+                                        และวิธีเล่าเรื่องให้ลูกค้าเข้าใจว่าคุณเก่งเรื่องไหน โดยไม่ต้องเริ่มคิดทุกอย่างเอง
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0">
+                                    <i class="fa-solid fa-gift text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-textMain mb-1">โอกาสรับโบนัสเพิ่มเติม</h4>
+                                    <p class="text-sm text-textSec">
+                                        หากคอนเทนต์ของคุณทำผลงานดี มีโอกาสได้รับโบนัส การดันพิเศษ หรือได้เข้าร่วมแคมเปญเฉพาะกิจของแพลตฟอร์ม
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="cute-card bg-white p-8 shadow-cute border border-gray-100">
+                        <h3 class="text-xl font-bold text-textMain mb-6">สิ่งที่คาดหวังจากคุณ</h3>
+                        <ul class="space-y-4 text-textSec">
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-camera text-primary mt-1"></i>
+                                <span><strong class="text-textMain">การทำคอนเทนต์สม่ำเสมอ:</strong>
+                                    แนะนำให้ลงคอนเทนต์ประมาณ 2–3 ชิ้นต่อสัปดาห์ และควรมีบัญชีโซเชียลหลักอย่างน้อย 1
+                                    บัญชีที่ลงทะเบียนกับ CBODY</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-user-check text-primary mt-1"></i>
+                                <span><strong class="text-textMain">คุณภาพงานและรีวิว:</strong>
+                                    รักษาเวลาออนไลน์และมาตรฐานงานให้คงที่ หากเรตติ้งแย่ต่อเนื่อง
+                                    อาจถูกปรับระดับลงได้</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-ban text-primary mt-1"></i>
+                                <span><strong class="text-textMain">ความเป็นเอกสิทธิ์ของแพลตฟอร์ม:</strong>
+                                    ไม่สามารถไปปรากฏบนแพลตฟอร์มเรียกเอ็กซ์เพิร์ตประเภทเดียวกันรายอื่น
+                                    (ยกเว้นพันธมิตรหรือสถานที่ที่ CBODY อนุมัติ)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="cute-card bg-gradient-to-br from-pastelBlue to-white p-8 shadow-cute border border-primary/20">
+                    <h4 class="font-bold text-primary mb-2 text-lg flex items-center gap-2">
+                        <i class="fa-solid fa-rocket"></i> เส้นทางเลื่อนขึ้นระดับ
+                    </h4>
+                    <p class="text-textSec">
+                        หากคุณรักษา<strong class="text-textMain">เวลาออนไลน์ที่สม่ำเสมอ รีวิวที่ดี
+                            และคอนเทนต์คุณภาพต่อเนื่อง</strong>
+                        เอ็กซ์เพิร์ตในระดับครีเอเตอร์พาร์ทเนอร์จะมีโอกาสถูกเชิญให้ขึ้นสู่ระดับ A
+                        และได้เข้าถึงงานที่ตั๋วสูงและรายได้ที่คาดการณ์ได้มากขึ้น
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tier C Detail -->
+        <section class="py-16 lg:py-20 bg-bgMain mobile-section">
+            <div class="max-w-5xl mx-auto px-6 lg:px-8">
+                <div class="mb-8 text-center md:text-left">
+                    <div class="cute-badge bg-gray-400 text-white mb-4 inline-block">TIER C</div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-textMain mb-4">ระดับ C · เอ็กซ์เพิร์ตพาร์ตไทม์คุณภาพ</h2>
+                    <p class="text-textSec text-lg max-w-2xl">
+                        ระดับเริ่มต้นสำหรับการเข้าร่วม CBODY เหมาะกับคนที่มีงานหลักอยู่แล้ว
+                        แต่อยากเพิ่มรายได้เสริมแบบยืดหยุ่นเพิ่มอีกช่องทาง ไม่มีการันตีรายได้ขั้นต่ำ
+                        แต่จะได้รับทราฟฟิกพื้นฐานจากระบบ หากแทบไม่ออนไลน์ หรือแทบไม่รับงานเลย
+                        ระบบจะยุติการร่วมงานโดยอัตโนมัติ
+                    </p>
+                </div>
+
+                <div class="cute-card bg-white p-8 md:p-10 shadow-cute">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-check text-gray-600"></i>
+                                </div>
+                                <h4 class="font-bold text-textMain text-lg">เงื่อนไขพื้นฐาน</h4>
+                            </div>
+                            <p class="text-sm text-textSec pl-13">
+                                ยืนยันตัวตนตามจริง ข้อมูลโปรไฟล์ถูกต้อง มีรูปภาพชัดเจน
+                                และสื่อสารกับลูกค้าและทีมงานด้วยความสุภาพเป็นมาตรฐาน
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-bullhorn text-gray-600"></i>
+                                </div>
+                                <h4 class="font-bold text-textMain text-lg">การช่วยโปรโมต</h4>
+                            </div>
+                            <p class="text-sm text-textSec pl-13">
+                                ควรมีบัญชีโซเชียลอย่างน้อย 1 บัญชีที่แจ้งให้ CBODY ทราบ
+                                และพร้อมช่วยลงหรือแชร์คอนเทนต์ที่ทีมเตรียมให้เป็นระยะ ๆ ในระดับที่ตกลงกัน
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-clock text-gray-600"></i>
+                                </div>
+                                <h4 class="font-bold text-textMain text-lg">เวลาออนไลน์และการรับงาน</h4>
+                            </div>
+                            <p class="text-sm text-textSec pl-13">
+                                เมื่อคุณกด “ออนไลน์” ระบบคาดหวังว่าคุณจะตอบกลับและรับงานในระดับที่เหมาะสม
+                                หากออนไลน์น้อยมาก หรือแทบไม่มีงานเลยเป็นระยะเวลานาน
+                                CBODY จะพิจารณายุติการร่วมงาน
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-shield-halved text-gray-600"></i>
+                                </div>
+                                <h4 class="font-bold text-textMain text-lg">ความเป็นเอกสิทธิ์</h4>
+                            </div>
+                            <p class="text-sm text-textSec pl-13">
+                                ไม่สามารถไปปรากฏบนแพลตฟอร์มเรียกเอ็กซ์เพิร์ตแบบเดียวกันรายอื่นได้
+                                (ยกเว้นสถานประกอบการหรือพาร์ทเนอร์ที่ CBODY อนุมัติ)
+                                การทำงานในร้านออฟไลน์หรือสายงานอื่นสามารถทำคู่กันได้
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Rules -->
+        <section class="py-16 lg:py-20 bg-white mobile-section">
+            <div class="max-w-3xl mx-auto px-6 lg:px-8">
+                <div
+                    class="cute-card bg-gradient-to-br from-pastelPink/60 to-pastelOrange/40 border-2 border-red-200 p-8 md:p-10 shadow-cute">
+                    <h3 class="text-2xl font-bold text-red-800 mb-6 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-exclamation text-red-600 text-xl"></i>
+                        </div>
+                        กติกาการร่วมงานสำคัญ
+                    </h3>
+                    <div class="space-y-6 text-textMain">
+                        <div class="bg-white/80 rounded-2xl p-6">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-sm font-bold">1</span>
+                                การช่วยโปรโมต เป็น “เงื่อนไขพื้นฐาน” ไม่ใช่ตัวเลือก
+                            </h4>
+                            <p class="text-sm text-textSec pl-8">
+                                การช่วยโพสต์หรือแชร์คอนเทนต์ที่ตกลงร่วมกันบนบัญชีของคุณเอง
+                                ถือเป็นเงื่อนไขพื้นฐานของการเข้าร่วม CBODY
+                                ไม่ใช่ฟีเจอร์เสริมที่ทำหรือไม่ทำก็ได้
+                            </p>
+                        </div>
+                        <div class="bg-white/80 rounded-2xl p-6">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-sm font-bold">2</span>
+                                ความเป็นเอกสิทธิ์ = เราทุ่มทรัพยากรให้คนที่จริงจัง
+                            </h4>
+                            <p class="text-sm text-textSec pl-8">
+                                <strong class="text-red-700">เอ็กซ์เพิร์ตไม่สามารถไปปรากฏบนแพลตฟอร์มเรียกเอ็กซ์เพิร์ตประเภทเดียวกันรายอื่น
+                                    (ยกเว้นพาร์ทเนอร์หรือสถานที่ที่ CBODY อนุมัติอย่างชัดเจน)</strong>
+                                ความเป็นเอกสิทธิ์ช่วยให้เราทุ่มทราฟฟิกและโอกาสดี ๆ ให้กับคนที่ตั้งใจเดินกับ CBODY จริง ๆ
+                            </p>
+                        </div>
+                        <div class="bg-white/80 rounded-2xl p-6">
+                            <h4 class="font-bold mb-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-sm font-bold">3</span>
+                                บัญชีที่ไม่ค่อยออนไลน์ หรือไม่ร่วมมือในการปรับ จะถูกยุติความร่วมงาน
+                            </h4>
+                            <p class="text-sm text-textSec pl-8">
+                                CBODY ตั้งใจทำงานร่วมกับเอ็กซ์เพิร์ตที่มองงานนี้อย่างจริงจังและสม่ำเสมอ
+                                บัญชีที่แทบไม่ออนไลน์ มีงานน้อยมากต่อเนื่อง
+                                หรือปฏิเสธการปรับปรุงในเรื่องพื้นฐานซ้ำ ๆ
+                                ระบบจะยุติความร่วมมือโดยไม่ต่ออายุ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-8 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center text-xs text-gray-400">
+                &copy; 2025 CBODY. สงวนลิขสิทธิ์ทั้งหมด
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
