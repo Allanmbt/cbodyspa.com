@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>มาตรฐานบริการภายใน CBODY - กลุ่ม Wellness</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#46C5A7',
+                        primaryStart: '#39B59A',
+                        primaryEnd: '#46C5A7',
+                        accent: '#C6A667',
+                        textMain: '#1F2937',
+                        textSec: '#6B7280',
+                        bgMain: '#F9F9F9',
+                        bgAlt: '#ECECEC',
+                        pastelPink: '#FFE8EE',
+                        pastelBlue: '#EDF2FF',
+                        pastelOrange: '#FFEED9',
+                        pastelGreen: '#E9F5EF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 16px rgba(0, 0, 0, 0.06)',
+                        'card': '0 4px 24px rgba(0, 0, 0, 0.04)',
+                        'cute': '0 8px 32px rgba(0, 0, 0, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #39B59A 0%, #46C5A7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cute-card {
+            border-radius: 24px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cute-badge {
+            border-radius: 12px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .section-card {
+            border-radius: 20px;
+            background: white;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-item {
+            border-left: 4px solid #46C5A7;
+            padding-left: 16px;
+            margin-bottom: 24px;
+        }
+
+        .emoji-icon {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+
+        /* Password Modal */
+        #passwordModal {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .password-input {
+            font-size: 24px;
+            letter-spacing: 8px;
+            text-align: center;
+        }
+
+        /* Number pad */
+        .num-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            font-size: 24px;
+            font-weight: 600;
+            transition: all 0.2s;
+            background: white;
+            border: 2px solid #ECECEC;
+        }
+
+        .num-btn:active {
+            transform: scale(0.95);
+            background: #E9F5EF;
+        }
+
+        @media (max-width: 640px) {
+            .num-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 20px;
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            75% {
+                transform: translateX(10px);
+            }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+
+            /* Increase base font size for better readability */
+            body {
+                font-size: 15px;
+            }
+
+            /* Optimize section card padding */
+            .section-card {
+                padding: 20px 16px;
+                border-radius: 16px;
+                margin-bottom: 16px;
+            }
+
+            /* Optimize service item spacing */
+            .service-item {
+                padding-left: 12px;
+                margin-bottom: 20px;
+            }
+
+            /* Better emoji sizing */
+            .emoji-icon {
+                font-size: 20px;
+                margin-right: 6px;
+            }
+
+            /* Optimize badge sizing */
+            .cute-badge {
+                padding: 6px 12px;
+                font-size: 12px;
+                border-radius: 10px;
+            }
+
+            /* Better heading sizes */
+            h1 {
+                font-size: 1.875rem !important;
+                line-height: 1.3 !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+                line-height: 1.4 !important;
+            }
+
+            h3 {
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
+            }
+
+            h4 {
+                font-size: 1.05rem !important;
+                line-height: 1.4 !important;
+            }
+
+            /* Optimize list spacing */
+            ul,
+            ol {
+                padding-left: 1.25rem;
+            }
+
+            li {
+                margin-bottom: 0.5rem;
+                line-height: 1.6;
+            }
+
+            /* Better paragraph spacing */
+            p {
+                line-height: 1.7;
+                margin-bottom: 0.75rem;
+            }
+
+            /* Optimize grid layouts for mobile */
+            .grid {
+                gap: 1rem !important;
+            }
+
+            /* Single column on mobile for better readability */
+            .md\:grid-cols-2,
+            .md\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Optimize rounded corners for mobile */
+            .rounded-xl,
+            .rounded-2xl {
+                border-radius: 12px !important;
+            }
+
+            /* Better padding for nested cards */
+            .bg-gray-50,
+            .bg-white {
+                padding: 14px !important;
+            }
+
+            /* Optimize price grid */
+            .grid-cols-2 {
+                gap: 0.75rem !important;
+            }
+
+            /* Better text sizing in small elements */
+            .text-xs {
+                font-size: 0.8125rem !important;
+            }
+
+            .text-sm {
+                font-size: 0.9375rem !important;
+            }
+
+            /* Optimize border cards */
+            .border-l-4 {
+                border-left-width: 3px !important;
+                padding-left: 12px !important;
+            }
+
+            /* Better spacing for flex items */
+            .flex.items-start.gap-2 {
+                gap: 0.5rem !important;
+                align-items: flex-start !important;
+            }
+
+            /* Optimize icon sizing in lists */
+            .flex.items-start.gap-2 i {
+                margin-top: 0.15rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+
+            /* Further optimize for very small screens */
+            .section-card {
+                padding: 16px 14px;
+            }
+
+            /* Tighter spacing */
+            .space-y-2>*+* {
+                margin-top: 0.4rem !important;
+            }
+
+            .space-y-4>*+* {
+                margin-top: 0.8rem !important;
+            }
+
+            /* Optimize header */
+            h1 {
+                font-size: 1.75rem !important;
+            }
+
+            h2 {
+                font-size: 1.375rem !important;
+            }
+
+            /* Better button sizing */
+            button {
+                min-height: 44px;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-bgMain text-textMain font-sans antialiased">
+
+    <!-- Password Modal -->
+    <div id="passwordModal" class="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 shadow-cute fade-in">
+            <div class="text-center mb-6">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-primary to-primaryEnd rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-lock text-white text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-textMain mb-2">🔐 ตรวจสอบสิทธิ์เข้าใช้งาน</h2>
+                <p class="text-textSec text-sm">กรุณากรอกรหัสตัวเลข 4 หลัก</p>
+            </div>
+
+            <div class="mb-6">
+                <div class="flex justify-center gap-3 mb-6">
+                    <div class="w-14 h-14 rounded-2xl border-2 border-gray-200 flex items-center justify-center text-2xl font-bold"
+                        id="digit1">•</div>
+                    <div class="w-14 h-14 rounded-2xl border-2 border-gray-200 flex items-center justify-center text-2xl font-bold"
+                        id="digit2">•</div>
+                    <div class="w-14 h-14 rounded-2xl border-2 border-gray-200 flex items-center justify-center text-2xl font-bold"
+                        id="digit3">•</div>
+                    <div class="w-14 h-14 rounded-2xl border-2 border-gray-200 flex items-center justify-center text-2xl font-bold"
+                        id="digit4">•</div>
+                </div>
+
+                <!-- Number Pad -->
+                <div class="grid grid-cols-3 gap-3 max-w-xs mx-auto">
+                    <button class="num-btn" onclick="addDigit('1')">1</button>
+                    <button class="num-btn" onclick="addDigit('2')">2</button>
+                    <button class="num-btn" onclick="addDigit('3')">3</button>
+                    <button class="num-btn" onclick="addDigit('4')">4</button>
+                    <button class="num-btn" onclick="addDigit('5')">5</button>
+                    <button class="num-btn" onclick="addDigit('6')">6</button>
+                    <button class="num-btn" onclick="addDigit('7')">7</button>
+                    <button class="num-btn" onclick="addDigit('8')">8</button>
+                    <button class="num-btn" onclick="addDigit('9')">9</button>
+                    <button class="num-btn" onclick="clearPassword()">
+                        <i class="fas fa-redo text-lg"></i>
+                    </button>
+                    <button class="num-btn" onclick="addDigit('0')">0</button>
+                    <button class="num-btn" onclick="deleteDigit()">
+                        <i class="fas fa-delete-left text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <p id="errorMsg" class="text-red-500 text-sm text-center hidden">❌ รหัสไม่ถูกต้อง โปรดลองใหม่</p>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden by default) -->
+    <div id="mainContent" class="hidden">
+        <!-- Navigation -->
+        <nav class="sticky top-0 z-40 glass border-b border-gray-100">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <div class="flex items-center gap-3">
+                        <img src="images/logo.webp" alt="CBODY Logo" class="h-8 w-auto">
+                        <span class="font-bold text-xl tracking-tight text-textMain">CBODY</span>
+                        <span class="cute-badge bg-red-100 text-red-600 text-xs">เอกสารภายใน</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a href="service-standards.html"
+                            class="text-sm text-textSec hover:text-primary transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-50 flex items-center gap-1.5">
+                            <i class="fas fa-language"></i>
+                            <span class="hidden sm:inline">中文</span>
+                            <span class="sm:hidden">CN</span>
+                        </a>
+                        <button onclick="logout()"
+                            class="text-sm text-textSec hover:text-primary transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-50">
+                            <i class="fas fa-sign-out-alt mr-1"></i> ออกจากหน้าเอกสาร
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="max-w-6xl mx-auto px-6 lg:px-8 py-8 pb-16">
+            <!-- Header -->
+            <header class="text-center mb-12 fade-in">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pastelPink/50 mb-4">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span class="text-xs font-semibold text-red-600 uppercase tracking-wider">สำหรับผู้เชี่ยวชาญ /
+                        Therapist
+                        ภายในระบบ</span>
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+                    <span class="text-gradient">มาตรฐานบริการภายใน CBODY</span>
+                </h1>
+                <p class="text-lg text-textSec max-w-2xl mx-auto">
+                    ฉบับ Wellness · ใช้สำหรับการฝึกอบรมและตรวจสอบก่อนเปิดใช้บริการ · ไม่เผยแพร่สู่ภายนอก
+                </p>
+            </header>
+
+            <!-- 0. 通用合作规则 -->
+            <section class="section-card fade-in">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="emoji-icon">📋</span>
+                    <span>0. กติกาการร่วมงานทั่วไป</span>
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-pastelOrange/30 rounded-2xl p-6">
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fas fa-car text-accent"></i>
+                            ค่าเดินทาง
+                        </h3>
+                        <ul class="space-y-2 text-sm text-textSec">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-primary mt-1"></i>
+                                <span>ค่าเดินทาง<strong class="text-textMain">เป็นของผู้เชี่ยวชาญทั้งหมด</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-exclamation-triangle text-amber-500 mt-1"></i>
+                                <span>ต้องเก็บ<strong class="text-textMain">อย่างเหมาะสม</strong>
+                                    ห้ามบวกเกินจริงหรือเอาเปรียบลูกค้า</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-info-circle text-blue-500 mt-1"></i>
+                                <span class="text-xs">รายละเอียดช่วงราคาที่แนะนำและโทษ หากมีคำร้องเรียน
+                                    ดูใน “ระเบียบค่าเดินทาง”</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-pastelPink/30 rounded-2xl p-6">
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fas fa-hand-holding-usd text-pink-600"></i>
+                            เงินมัดจำ
+                        </h3>
+                        <ul class="space-y-2 text-sm text-textSec">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-primary mt-1"></i>
+                                <span>ให้ผู้เชี่ยวชาญ<strong
+                                        class="text-textMain">ตกลงและเก็บกับลูกค้าโดยตรง</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-qrcode text-primary mt-1"></i>
+                                <span>ควรใช้ QR ส่วนตัวของผู้เชี่ยวชาญเป็นหลัก
+                                    หรือใช้<strong class="text-textMain">บัญชีรับแทนของแพลตฟอร์ม</strong> (WeChat /
+                                    Alipay)
+                                    ได้เมื่อจำเป็น</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-coins text-amber-500 mt-1"></i>
+                                <span>โดยทั่วไปเก็บ<strong class="text-textMain">ประมาณ 500–1,000 THB</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-lightbulb text-blue-500 mt-1"></i>
+                                <span class="text-xs">กรณีค่าเดินทางต่ำกว่า 200 THB / ลูกค้าเก่าหรือสมาชิกระดับสูง
+                                    สามารถพิจารณาไม่เก็บมัดจำได้</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-pastelGreen/30 rounded-2xl p-6">
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fas fa-percent text-primary"></i>
+                            ส่วนแบ่งค่าบริการ
+                        </h3>
+                        <ul class="space-y-2 text-sm text-textSec">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-amber-500 mt-1"></i>
+                                <span>RELAX LITE, COCO FLOW: <strong class="text-textMain">ผู้เชี่ยวชาญ
+                                        55%</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-star text-primary mt-1"></i>
+                                <span>บริการ Wellness อื่น ๆ: <strong class="text-textMain">ผู้เชี่ยวชาญ
+                                        65%</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-info-circle text-blue-500 mt-1"></i>
+                                <span
+                                    class="text-xs">แพลตฟอร์มมีสิทธิ์ปรับเปลี่ยนตามสถานการณ์และจะแจ้งให้ทราบล่วงหน้า</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-pastelBlue/30 rounded-2xl p-6">
+                    <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                        <i class="fas fa-clipboard-check text-primary"></i>
+                        เงื่อนไขก่อนเปิดใช้เมนู
+                    </h3>
+                    <p class="text-sm text-textSec">
+                        ผู้เชี่ยวชาญต้องผ่านการอบรมของแต่ละเมนูและผ่านการประเมินก่อน จึงจะเปิดให้รับงานได้
+                        หากลูกค้าระบุว่ารูปแบบบริการไม่ตรงตามมาตรฐาน หรือคุณภาพต่ำกว่าที่อธิบายไว้
+                        แพลตฟอร์มมีสิทธิ์ปิดเมนูนั้นให้ทันที
+                    </p>
+                </div>
+            </section>
+
+            <!-- 1. 分类概览 -->
+            <section class="section-card fade-in">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="emoji-icon">🎯</span>
+                    <span>1. ภาพรวมประเภทบริการ</span>
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- Wellness -->
+                    <div class="service-item">
+                        <h3 class="font-bold text-xl mb-3 flex items-center gap-2">
+                            <span class="emoji-icon text-2xl">🌿</span>
+                            1.1 Wellness (ห้องนวด / สปาเคลื่อนที่)
+                        </h3>
+                        <p class="text-sm text-textSec mb-3">
+                            <strong class="text-textMain">ตำแหน่งของกลุ่ม:</strong>
+                            บริการนวด–สปาไปหาลูกค้าถึงที่
+                            เน้นผ่อนคลายร่างกายพร้อมบรรยากาศและคุณค่าทางอารมณ์
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <h4 class="font-semibold text-textMain mb-2">🎒 อุปกรณ์พื้นฐาน</h4>
+                                <ul class="space-y-1 text-textSec">
+                                    <li>• แผ่นรอง / ปลอกหมอนแบบใช้ครั้งเดียว</li>
+                                    <li>• น้ำมันนวด / เจล</li>
+                                    <li>• เจลล้างมือหรือสเปรย์แอลกอฮอล์</li>
+                                    <li>• โทรศัพท์ + ลำโพงเล็ก สำหรับเปิดเพลง</li>
+                                    <li>• ชุดทำงานมาตรฐาน (ยืนยันแบบกับทีมดูแลก่อน)</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <h4 class="font-semibold text-textMain mb-2">📝 ลำดับขั้นตอนมาตรฐาน</h4>
+                                <p class="text-textSec leading-relaxed">
+                                    ถึงห้องลูกค้า → ดูสภาพพื้นที่ → คุยสั้น ๆ เรื่องสุขภาพและข้อห้าม →
+                                    ล้างมือ / เตรียมตัว → ให้บริการตามมาตรฐานของแต่ละเมนู →
+                                    เก็บงานและสรุปเบา ๆ ก่อนจบงาน
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 bg-red-50 border-l-4 border-red-400 rounded-r-xl p-4">
+                            <p class="text-sm text-red-700">
+                                <strong>⚠️ ขอบเขตสำคัญ:</strong>
+                                หลีกเลี่ยงท่าทางหรือการกดที่เสี่ยงอันตราย
+                                หากลูกค้าขอสิ่งที่อยู่นอกเหนือจากมาตรฐานเมนูหรือผิดกติกา
+                                ต้องดึงกลับเข้าสู่รูปแบบบริการตามคู่มือ หรือขอจบงานอย่างสุภาพ
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- HomeHub -->
+                    <div class="bg-gray-100 rounded-2xl p-6 border-2 border-dashed border-gray-300">
+                        <h3 class="font-bold text-xl mb-2 flex items-center gap-2 text-gray-500">
+                            <span class="emoji-icon">🏠</span>
+                            1.2 HomeHub (โซนบริการที่ห้องลูกค้า)
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            ประเภทนี้ยังอยู่ในช่วง<strong>ออกแบบภายใน</strong>
+                            ทั้งรูปแบบงานและโครงสร้างส่วนแบ่งรายได้
+                            <strong>ยังไม่เปิดให้ผู้เชี่ยวชาญเลือกเมนูหรือรับงานเอง</strong>
+                            จนกว่าจะมีคู่มือและประกาศอย่างเป็นทางการจากแพลตฟอร์ม
+                        </p>
+                    </div>
+
+                    <!-- Journey -->
+                    <div class="bg-gray-100 rounded-2xl p-6 border-2 border-dashed border-gray-300">
+                        <h3 class="font-bold text-xl mb-2 flex items-center gap-2 text-gray-500">
+                            <span class="emoji-icon">✈️</span>
+                            1.3 Journey (โซนเพื่อนเที่ยว / ไลฟ์สไตล์)
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            ประเภทนี้อยู่ในช่วง<strong>ทดลองและวางระบบ</strong>
+                            ยัง<strong>ไม่เปิดรับสมัครเสรี</strong> สำหรับผู้เชี่ยวชาญ
+                            คู่มือเรื่อง City Tour / Day Trip / Travel Private
+                            จะถูกจัดทำและแจ้งให้ทราบภายหลังในเอกสารอีกชุดหนึ่ง
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Wellness 类服务标准 -->
+            <section class="section-card fade-in">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="emoji-icon">💆</span>
+                    <span>2. มาตรฐานบริการกลุ่ม Wellness (แยกตามเมนู)</span>
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- 2.1 RELAX LITE -->
+                    <div class="border-2 border-gray-200 rounded-2xl p-6 hover:border-primary/30 transition-colors">
+                        <div class="flex items-start justify-between mb-4">
+                            <h3 class="font-bold text-xl flex items-center gap-2">
+                                <span class="cute-badge bg-pastelBlue text-blue-600">2.1</span>
+                                RELAX LITE
+                            </h3>
+                            <span class="cute-badge bg-amber-100 text-amber-700">ส่วนแบ่ง 55%</span>
+                        </div>
+
+                        <p class="text-sm text-textSec mb-4">
+                            <strong class="text-textMain">คอนเซ็ปต์:</strong>
+                            นวดผ่อนคลายมาตรฐานไปหาลูกค้า (เลือกผสมระหว่าง Thai / Oil ได้)
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-textMain mb-2">👥 กลุ่มลูกค้าที่เหมาะ</h4>
+                                <p class="text-textSec">ลูกค้าที่ลองใช้บริการครั้งแรก ต้องการแค่ผ่อนคลายเบา ๆ
+                                    และค่อนข้างใส่ใจเรื่องงบประมาณ</p>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r-xl p-3">
+                                <h4 class="font-semibold text-blue-800 mb-1">👔 การแต่งกาย</h4>
+                                <p class="text-blue-700 text-xs">
+                                    ใช้ชุดทำงานนวดมาตรฐาน สีสุภาพ สะอาดเรียบร้อย
+                                    แนะนำให้เปลี่ยนชุดที่ห้องน้ำก่อนเริ่มงาน
+                                    จะใส่ถุงน่องด้านในเพิ่มก็ได้ (ไม่ถือเป็นข้อบังคับ)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 bg-pastelGreen/20 rounded-xl p-4">
+                            <h4 class="font-semibold text-textMain mb-2">✅ จุดเน้นของบริการ</h4>
+                            <ul class="space-y-1 text-sm text-textSec">
+                                <li>• โฟกัสไลน์ผ่อนคลายบริเวณบ่า คอ หลัง เอว และขา</li>
+                                <li>• ระดับน้ำหนักให้ยึด “สบายและปลอดภัย” เป็นหลัก
+                                    คอยเช็คฟีดแบ็กลูกค้าเป็นระยะ</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-blue-800 mb-3">💰 ระยะเวลาและราคาแนะนำ</h4>
+                            <p class="text-xs text-blue-600 mb-3">
+                                ใช้เป็นแนวทางตั้งราคาในแอป ลูกค้าจะเห็นเฉพาะราคาจริงที่ผู้เชี่ยวชาญเลือก
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 text-sm">
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">60 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 1,000 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 800–1,600 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">90 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 1,400 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 1,000–2,000 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">120 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 1,800 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 1,200–2,400 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">180 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 2,400 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 1,800–3,000 THB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.2 COCO FLOW -->
+                    <div class="border-2 border-primary/20 rounded-2xl p-6 bg-pastelGreen/10">
+                        <div class="flex items-start justify-between mb-4">
+                            <h3 class="font-bold text-xl flex items-center gap-2">
+                                <span class="cute-badge bg-primary text-white">2.2</span>
+                                COCO FLOW
+                            </h3>
+                            <span class="cute-badge bg-amber-100 text-amber-700">ส่วนแบ่ง 55%</span>
+                        </div>
+
+                        <p class="text-sm text-textSec mb-4">
+                            <strong class="text-textMain">คอนเซ็ปต์:</strong>
+                            สปาน้ำมันมะพร้าวเกรดดี เน้นสัมผัสลื่นไหล บรรยากาศละมุน และอารมณ์ที่ประณีตขึ้นจาก Relax Lite
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-4 text-sm mb-4">
+                            <div>
+                                <h4 class="font-semibold text-textMain mb-2">👥 กลุ่มลูกค้าที่เหมาะ</h4>
+                                <p class="text-textSec">ลูกค้าที่โฟกัสคุณภาพ รายละเอียด และบรรยากาศ
+                                    ยอมจ่ายเพิ่มเพื่อประสบการณ์ที่ดีกว่า</p>
+                            </div>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-r-xl p-3">
+                                <h4 class="font-semibold text-yellow-800 mb-1">👗 การแต่งกาย</h4>
+                                <p class="text-yellow-700 text-xs">
+                                    ก่อนเริ่มงาน<strong>ต้องเปลี่ยนเป็นชุดทำงาน + ถุงน่อง</strong>
+                                    ตามแบบที่แพลตฟอร์มแนะนำ สามารถเลือกสไตล์ที่มีความรู้สึก sensual ได้
+                                    แต่ภาพรวมต้องดูสะอาดและมีรสนิยม
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-4 mb-4">
+                            <h4 class="font-semibold text-textMain mb-2">🎨 วัสดุ & บรรยากาศ</h4>
+                            <ul class="space-y-1 text-sm text-textSec">
+                                <li>• ใช้น้ำมันนวดฐานมะพร้าวคุณภาพดี เตรียมไปให้เพียงพอในแต่ละงาน</li>
+                                <li>• แนะนำให้ใช้ไฟส้มอ่อน / โคมไฟเล็ก และเพลงบรรยากาศเพื่อช่วยเสริมฟีลลิ่ง</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-pastelGreen/30 rounded-xl p-4">
+                            <h4 class="font-semibold text-textMain mb-2">✨ จุดเน้นเพิ่มเติม</h4>
+                            <ul class="space-y-1 text-sm text-textSec">
+                                <li>• ลายมือควรต่อเนื่อง ลื่นไหล ลดการใช้แรงกระชากหรือสะดุด</li>
+                                <li>• โทนของบริการต้องรู้สึก “ประณีตและละเมียดกว่า” Relax Lite อย่างชัดเจน</li>
+                                <li>• เหมาะให้เป็นเมนูหลักของผู้เชี่ยวชาญที่อายุน้อย
+                                    มีภาพลักษณ์และสไตล์ที่ชัดเจน</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 bg-green-50 border-l-4 border-green-400 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-green-800 mb-3">💰 ระยะเวลาและราคาแนะนำ</h4>
+                            <p class="text-xs text-green-600 mb-3">
+                                ใช้เป็นกรอบราคาในแอป ส่วนราคาสุดท้ายให้ผู้เชี่ยวชาญเลือกภายในช่วงนี้
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 text-sm">
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">60 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 1,200 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 1,000–1,800 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">90 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 1,700 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 1,400–2,300 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">120 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 2,200 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 1,800–3,000 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">180 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 3,000 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 2,400–4,000 THB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.3 ENERGY TOUCH -->
+                    <div class="border-2 border-purple-200 rounded-2xl p-6 bg-purple-50/30">
+                        <div class="flex items-start justify-between mb-4">
+                            <h3 class="font-bold text-xl flex items-center gap-2">
+                                <span class="cute-badge bg-purple-500 text-white">2.3</span>
+                                ENERGY TOUCH
+                            </h3>
+                            <span class="cute-badge bg-primary text-white">ส่วนแบ่ง 65%</span>
+                        </div>
+
+                        <p class="text-sm text-textSec mb-4">
+                            <strong class="text-textMain">คอนเซ็ปต์:</strong>
+                            เมนูโฟกัสโซนพลังงานของผู้ชาย เน้นผ่อนคลายบริเวณแกนกลางลำตัวและกล้ามเนื้อรอบ ๆ
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-4 text-sm mb-4">
+                            <div>
+                                <h4 class="font-semibold text-textMain mb-2">👔 การแต่งกาย</h4>
+                                <p class="text-textSec">ใช้ชุดทำงานโทนเข้ม ดูสุภาพและให้ความรู้สึกเป็นส่วนตัว</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-textMain mb-2">🎯 พื้นที่โฟกัสหลัก</h4>
+                                <p class="text-textSec">
+                                    เอว–สะโพก ขาหนีบ รอบเชิงกราน ต้นขาด้านหน้า–ด้านหลัง
+                                    และกล้ามเนื้อที่เชื่อมกับแกนกลางของร่างกาย
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 border-2 border-red-300 rounded-xl p-4 mb-4">
+                            <h4 class="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                                <i class="fas fa-exclamation-circle"></i>
+                                มาตรฐานบังคับ
+                            </h4>
+                            <ul class="space-y-1 text-sm text-red-600">
+                                <li>• เวลาที่ลงมือดูแลบริเวณ Core & พื้นที่เกี่ยวข้อง<strong>ต้องไม่น้อยกว่า 15
+                                        นาที</strong>
+                                    และต้องตามลำดับขั้นตอนที่อบรมไว้</li>
+                                <li>• เปิดใช้เมนูนี้ได้เฉพาะผู้ที่ผ่านการอบรมและสอบผ่านของ ENERGY TOUCH เท่านั้น</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-yellow-800 mb-2">⚠️ เงื่อนไขด้านความเสี่ยง</h4>
+                            <p class="text-sm text-yellow-700">
+                                หากลูกค้าระบุว่า “จับไม่เป็น” “รีบเกินไป” หรือ “ไม่ตรงกับที่อธิบายในเมนู”
+                                แพลตฟอร์มมีสิทธิ์<strong>ระงับหรือถอดเมนู ENERGY TOUCH</strong>
+                                ของผู้เชี่ยวชาญคนนั้นทันที
+                            </p>
+                        </div>
+
+                        <div class="mt-4 bg-purple-50 border-l-4 border-purple-400 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-purple-800 mb-3">💰 ระยะเวลาและราคาแนะนำ</h4>
+                            <p class="text-xs text-purple-600 mb-3">
+                                ใช้เป็นกรอบตั้งราคาเท่านั้น ผู้เชี่ยวชาญเลือกได้ตามระดับงานของตัวเอง
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 text-sm">
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">60 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 1,800 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 1,500–2,400 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">90 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 2,300 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 1,900–3,000 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">120 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 2,900 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 2,300–3,800 THB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.4 ENERGY TOUCH PLUS -->
+                    <div class="border-2 border-purple-300 rounded-2xl p-6 bg-gradient-to-br from-purple-50 to-pink-50">
+                        <div class="flex items-start justify-between mb-4">
+                            <h3 class="font-bold text-xl flex items-center gap-2">
+                                <span
+                                    class="cute-badge bg-gradient-to-r from-purple-500 to-pink-500 text-white">2.4</span>
+                                ENERGY TOUCH PLUS
+                            </h3>
+                            <span class="cute-badge bg-primary text-white">ส่วนแบ่ง 65%</span>
+                        </div>
+
+                        <p class="text-sm text-textSec mb-4">
+                            <strong class="text-textMain">คอนเซ็ปต์:</strong>
+                            เวอร์ชันต่อยอดของ ENERGY TOUCH มีเทคนิคเล่นระดับร้อน–เย็น
+                            และเทคนิคแนว “จับเส้นพลังงาน” ขั้นสูง
+                        </p>
+
+                        <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-4 mb-4">
+                            <h4 class="font-semibold text-amber-800 mb-2">👨‍🏫 ผู้ที่สามารถเปิดเมนูนี้</h4>
+                            <p class="text-sm text-amber-700">
+                                เปิดได้เฉพาะ<strong>ทีม Aloha</strong> หรือผู้เชี่ยวชาญที่ผ่านการอบรมเทคนิค Karsai
+                                และเมนูขั้นสูงที่แพลตฟอร์มอนุมัติแล้ว
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4 text-sm mb-4">
+                            <div class="bg-white rounded-xl p-4">
+                                <h4 class="font-semibold text-textMain mb-2">🧊 อุปกรณ์เพิ่มเติม</h4>
+                                <p class="text-textSec">
+                                    อุปกรณ์ประคบร้อน–เย็นที่ปลอดภัย หรือใช้ผ้า/ผืนร้อน–เย็น
+                                    เพื่อสร้างจังหวะ “ร้อน–เย็น–ผ่อนคลาย”
+                                </p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4">
+                                <h4 class="font-semibold text-textMain mb-2">✨ แนวทางให้บริการ</h4>
+                                <p class="text-textSec">
+                                    ใช้ลายมือของ ENERGY TOUCH เป็นฐาน แล้วเพิ่มมิติเรื่องอุณหภูมิและเทคนิคที่ลึกขึ้น
+                                    ต้องคุมแรง เวลา และความปลอดภัยของผิวลูกค้าให้ดีเป็นพิเศษ
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 border-l-4 border-red-500 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-red-700 mb-2">🚫 ข้อห้ามสำคัญ</h4>
+                            <p class="text-sm text-red-600">
+                                ผู้ที่ไม่ได้รับอนุญาต<strong>ห้าม</strong>โฆษณาหรือบอกลูกค้าว่ารับงาน ENERGY TOUCH PLUS
+                                เด็ดขาด หากตรวจพบ แพลตฟอร์มมีสิทธิ์ถอดเมนูและลงโทษทันที
+                            </p>
+                        </div>
+
+                        <div class="mt-4 bg-purple-50 border-l-4 border-purple-400 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-purple-800 mb-3">💰 ระยะเวลาและราคาแนะนำ</h4>
+                            <p class="text-xs text-purple-600 mb-3">
+                                ตอนนี้เปิดเฉพาะแพ็กเกจ 90 นาที ใช้ช่วงราคาและราคาแนะนำด้านล่าง
+                            </p>
+                            <div class="text-sm">
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">90 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 2,400 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 2,100–3,000 THB</div>
+                                    <div class="text-xs text-amber-600 mt-2">⚠️ ปัจจุบันเปิดใช้เฉพาะตัวเลือก 90 นาที
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.5 YOGA BODY LITE -->
+                    <div class="border-2 border-pink-200 rounded-2xl p-6 bg-pink-50/30">
+                        <div class="flex items-start justify-between mb-4">
+                            <h3 class="font-bold text-xl flex items-center gap-2">
+                                <span class="cute-badge bg-pink-500 text-white">2.5</span>
+                                YOGA BODY LITE
+                            </h3>
+                            <span class="cute-badge bg-primary text-white">ส่วนแบ่ง 65%</span>
+                        </div>
+
+                        <p class="text-sm text-textSec mb-4">
+                            <strong class="text-textMain">คอนเซ็ปต์:</strong>
+                            เมนูที่ผสมการยืดเหยียด สาย Flow ใกล้ชิด และการนวดน้ำมัน
+                            ให้ความรู้สึกมีอารมณ์ร่วมแต่ยังอยู่ในกรอบมืออาชีพ
+                        </p>
+
+                        <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-4 mb-4">
+                            <h4 class="font-semibold text-amber-800 mb-2">👨‍🏫 การอบรมที่ยอมรับ</h4>
+                            <p class="text-sm text-amber-700">
+                                สามารถผ่านการเทรนจาก <strong>CBODY Spa Club</strong>
+                                หรือมีประสบการณ์แนว Body to Body ที่เข้าเฟรมคุณภาพของแพลตฟอร์มก็ได้
+                                แต่ต้องผ่านการประเมินก่อนเปิดใช้เมนู
+                            </p>
+                        </div>
+
+                        <div class="bg-pink-100 border-2 border-pink-400 rounded-xl p-4 mb-4">
+                            <h4 class="font-semibold text-pink-800 mb-2">👗 การแต่งกาย</h4>
+                            <ul class="space-y-1 text-sm text-pink-700">
+                                <li>• ช่วงล่าง: <strong>ต้องใส่ถุงน่อง</strong>
+                                    จะเป็นถุงน่องแนวเซ็กซี่ / ใส่จีสตริงทับ / หรือแบบที่ใช้ในมาตรฐานร้านก็ได้
+                                    แต่ต้องสะอาดและปลอดภัย</li>
+                                <li>• ช่วงบน: ก่อนให้ลูกค้าพลิกตัวประมาณ<strong>5 นาที</strong>
+                                    ให้ถอดเสื้อคลุมชั้นนอกตามขั้นตอนที่ฝึกไว้
+                                    ทำให้ดูเป็นธรรมชาติ ไม่ควรทำให้รู้สึกโชว์เกินเหตุ</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-4 mb-4">
+                            <h4 class="font-semibold text-textMain mb-2">📝 แนวทางการให้บริการ</h4>
+                            <p class="text-sm text-textSec">
+                                ใช้การยืดเหยียดเบา ๆ การพาเคลื่อนไหวร่างกาย และการนวดน้ำมันแบบ Flow
+                                ทุกจังหวะต้องตามคู่มือที่ได้รับการอบรมจากร้าน
+                            </p>
+                        </div>
+
+                        <div class="bg-red-50 border-2 border-red-400 rounded-xl p-4">
+                            <h4 class="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                                <i class="fas fa-ban"></i>
+                                เรื่องค่าทิป & ข้อห้าม
+                            </h4>
+                            <ul class="space-y-1 text-sm text-red-600">
+                                <li>• เมนูนี้<strong>รวม</strong>ส่วนของการถอดช่วงบนไว้แล้ว
+                                    <strong class="underline">
+                                        ห้ามเรียกเก็บทิปเพิ่มในลักษณะ “ขอทิปเพื่อถอดเสื้อ / เปลือย”
+                                    </strong>
+                                </li>
+                                <li>• หากมีคำร้องเรียนเรื่องเรียกทิปเกิน หรือแอบเปลี่ยนรูปแบบบริการเอง
+                                    แพลตฟอร์มสามารถปิดเมนูนี้ และตัดคะแนนความน่าเชื่อถือได้ทันที</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 bg-pink-50 border-l-4 border-pink-400 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-pink-800 mb-3">💰 ระยะเวลาและราคาแนะนำ</h4>
+                            <p class="text-xs text-pink-600 mb-3">
+                                ให้ใช้ช่วงราคานี้เป็นฐาน โดยปรับตามภาพลักษณ์และสกิลของแต่ละคน
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 text-sm">
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">60 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 2,500 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 2,000–4,000 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">90 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 3,300 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 2,600–5,000 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">120 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 4,000 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 3,300–6,000 THB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.6 SILK ONSEN VOYAGE -->
+                    <div
+                        class="border-2 border-indigo-200 rounded-2xl p-6 bg-gradient-to-br from-indigo-50 to-purple-50">
+                        <div class="flex items-start justify-between mb-4">
+                            <h3 class="font-bold text-xl flex items-center gap-2">
+                                <span
+                                    class="cute-badge bg-gradient-to-r from-indigo-500 to-purple-500 text-white">2.6</span>
+                                SILK ONSEN VOYAGE
+                            </h3>
+                            <span class="cute-badge bg-primary text-white">ส่วนแบ่ง 65%</span>
+                        </div>
+
+                        <p class="text-sm text-textSec mb-4">
+                            <strong class="text-textMain">คอนเซ็ปต์:</strong>
+                            เมนูสไตล์ออนเซ็นญี่ปุ่น มีขั้นตอนอาบน้ำคู่ (บาธคู่) และการนวดน้ำมันแบบลื่นไหลเต็มตัว
+                        </p>
+
+                        <div class="bg-amber-50 border-2 border-amber-400 rounded-xl p-4 mb-4">
+                            <h4 class="font-semibold text-amber-800 mb-2">📚 เงื่อนไขก่อนเปิดใช้</h4>
+                            <p class="text-sm text-amber-700">
+                                ต้องผ่านการอบรมเฉพาะของเมนูนี้และสอบผ่านก่อนเท่านั้น จึงจะเปิดให้รับงานได้
+                            </p>
+                        </div>
+
+                        <div class="bg-red-50 border-2 border-red-400 rounded-xl p-4 mb-4">
+                            <h4 class="font-semibold text-red-700 mb-2">⚠️ ข้อกำหนดหลัก</h4>
+                            <ul class="space-y-1 text-sm text-red-600">
+                                <li>• ต้องมีขั้นตอน<strong>บาธคู่ (Couple Bath)</strong>
+                                    ตามลำดับที่กำหนดใน SOP ของร้าน</li>
+                                <li>• ใช้แผ่นรองกันลื่น / แผ่นกันน้ำอย่างเหมาะสม เพื่อลดความเสี่ยงในการล้ม</li>
+                            </ul>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4 text-sm mb-4">
+                            <div class="bg-white rounded-xl p-4">
+                                <h4 class="font-semibold text-textMain mb-2">👔 การแต่งกาย & สภาพร่างกาย</h4>
+                                <p class="text-textSec">
+                                    ตามมาตรฐานของเมนูนี้จะให้บริการในลักษณะ<strong>ไม่สวมเสื้อผ้าขณะทำงาน</strong>
+                                    แต่ต้องรักษาความเป็นมืออาชีพ สุขอนามัย และความปลอดภัยของทั้งสองฝ่ายตลอดเวลา
+                                </p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4">
+                                <h4 class="font-semibold text-textMain mb-2">📝 ลำดับขั้นตอนสำคัญ</h4>
+                                <p class="text-textSec">
+                                    พูดคุยก่อนเข้าห้องน้ำ → บาธคู่ตาม SOP → ขึ้นแผ่นรองสำหรับงานน้ำมันแบบลื่นไหล →
+                                    เช็ดทำความสะอาดร่างกายและพื้นที่ → เก็บงานและสรุปอย่างสุภาพ
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-yellow-800 mb-2">🛡️ การควบคุมความเสี่ยง</h4>
+                            <p class="text-sm text-yellow-700">
+                                ต้องระวังเรื่องท่าทาง น้ำหนักตัว และปริมาณน้ำมันเป็นพิเศษ
+                                หากลูกค้ารายงานว่ารูปแบบไม่ตรงตามที่อบรม หรือเกิดเหตุเสี่ยงอันตราย
+                                แพลตฟอร์มมีสิทธิ์<strong>หยุดการใช้เมนูนี้ของผู้เชี่ยวชาญทันที</strong>
+                            </p>
+                        </div>
+
+                        <div class="mt-4 bg-indigo-50 border-l-4 border-indigo-400 rounded-r-xl p-4">
+                            <h4 class="font-semibold text-indigo-800 mb-3">💰 ระยะเวลาและราคาแนะนำ</h4>
+                            <p class="text-xs text-indigo-600 mb-3">
+                                เป็นเมนูระดับบน เหมาะสำหรับลูกค้ากลุ่มกำลังซื้อสูง ใช้ช่วงราคาแนะนำดังนี้
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 text-sm">
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">60 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 2,700 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 2,200–4,200 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">90 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 3,600 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 3,000–5,200 THB</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-3">
+                                    <div class="font-semibold text-textMain mb-1">120 นาที</div>
+                                    <div class="text-primary font-bold">ราคาแนะนำ 4,500 THB</div>
+                                    <div class="text-xs text-textSec">ช่วงราคาที่ตั้งได้: 3,800–6,500 THB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 备注与后续 -->
+            <section class="section-card fade-in">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="emoji-icon">📌</span>
+                    <span>3. หมายเหตุและแนวทางต่อไป</span>
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <p class="text-sm text-textSec mb-3">
+                            ประเภท <strong class="text-textMain">HomeHub</strong> และ
+                            <strong class="text-textMain">Journey</strong>
+                            ขณะนี้เป็นเพียงโครงสำหรับวางระบบในอนาคต
+                            <strong class="text-red-600">ยังไม่เปิดให้ผู้เชี่ยวชาญเลือกหรือรับงานเอง</strong>
+                            จนกว่าจะมีคู่มือฉบับเต็มจากทีมปฏิบัติการ
+                        </p>
+                        <p class="text-xs text-textSec">
+                            สิทธิ์ในการตีความ ปรับปรุง หรือเปลี่ยนแปลงมาตรฐานทั้งหมด
+                            เป็นของทีมปฏิบัติการ CBODY แต่เพียงผู้เดียว
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-pastelGreen/30 to-pastelBlue/30 rounded-2xl p-6 text-center">
+                        <p class="text-sm text-textMain">
+                            <i class="fas fa-heart text-red-500 mr-2"></i>
+                            ขอบคุณสำหรับความตั้งใจและความเป็นมืออาชีพของคุณ
+                            เรามาสร้างประสบการณ์ที่ดีที่สุดให้ลูกค้าของ CBODY ไปด้วยกัน
+                            <i class="fas fa-heart text-red-500 ml-2"></i>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-100 py-6">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center text-xs text-gray-400">
+                    © 2025 CBODY · เอกสารภายในสำหรับการฝึกอบรม · ห้ามเผยแพร่หรือส่งต่อให้บุคคลภายนอก
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let password = '';
+        let correctPassword = '9527'; // Default password
+
+        // Load config
+        fetch('/config/standards-config.json')
+            .then(response => response.json())
+            .then(config => {
+                correctPassword = config.accessPassword;
+            })
+            .catch(error => {
+                console.log('Using default password');
+            });
+
+        // Check if already logged in and session is still valid (2 hours)
+        function checkSession() {
+            const authStatus = sessionStorage.getItem('standardsAuth');
+            const loginTime = sessionStorage.getItem('standardsAuthTime');
+
+            if (authStatus === 'true' && loginTime) {
+                const currentTime = new Date().getTime();
+                const elapsedTime = currentTime - parseInt(loginTime);
+                const twoHours = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
+
+                if (elapsedTime < twoHours) {
+                    // Session is still valid
+                    showContent();
+                } else {
+                    // Session expired, clear and show login
+                    sessionStorage.removeItem('standardsAuth');
+                    sessionStorage.removeItem('standardsAuthTime');
+                }
+            }
+        }
+
+        checkSession();
+
+        function addDigit(digit) {
+            if (password.length < 4) {
+                password += digit;
+                updateDisplay();
+
+                if (password.length === 4) {
+                    setTimeout(checkPassword, 300);
+                }
+            }
+        }
+
+        function deleteDigit() {
+            if (password.length > 0) {
+                password = password.slice(0, -1);
+                updateDisplay();
+            }
+        }
+
+        function clearPassword() {
+            password = '';
+            updateDisplay();
+            document.getElementById('errorMsg').classList.add('hidden');
+        }
+
+        function updateDisplay() {
+            for (let i = 1; i <= 4; i++) {
+                const digit = document.getElementById(`digit${i}`);
+                if (i <= password.length) {
+                    digit.textContent = password[i - 1];
+                    digit.classList.add('border-primary', 'text-primary');
+                } else {
+                    digit.textContent = '•';
+                    digit.classList.remove('border-primary', 'text-primary');
+                }
+            }
+        }
+
+        function checkPassword() {
+            if (password === correctPassword) {
+                const currentTime = new Date().getTime();
+                sessionStorage.setItem('standardsAuth', 'true');
+                sessionStorage.setItem('standardsAuthTime', currentTime.toString());
+                showContent();
+            } else {
+                // Wrong password
+                document.getElementById('errorMsg').classList.remove('hidden');
+                const modal = document.querySelector('#passwordModal > div');
+                modal.classList.add('shake');
+                setTimeout(() => {
+                    modal.classList.remove('shake');
+                    clearPassword();
+                }, 500);
+            }
+        }
+
+        function showContent() {
+            document.getElementById('passwordModal').classList.add('hidden');
+            document.getElementById('mainContent').classList.remove('hidden');
+        }
+
+        function logout() {
+            sessionStorage.removeItem('standardsAuth');
+            sessionStorage.removeItem('standardsAuthTime');
+            location.reload();
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('passwordModal').classList.contains('hidden')) return;
+
+            if (e.key >= '0' && e.key <= '9') {
+                addDigit(e.key);
+            } else if (e.key === 'Backspace') {
+                deleteDigit();
+            } else if (e.key === 'Enter' && password.length === 4) {
+                checkPassword();
+            } else if (e.key === 'Escape') {
+                clearPassword();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
