@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(for file in 2-profile-media/index.html 3-work-status/index.html 4-order-process/index.html 5-communication/index.html 7-safety/index.html 8-faq/index.html)",
+      "Bash(do sed -i '' 's/CBODY GO 手册/CBODY GO คู่มือ/g' \"$file\")",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

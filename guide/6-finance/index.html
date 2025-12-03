@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. วิธีชำระเงิน/ถอนเงิน - CBODY GO คู่มือการใช้งาน</title>
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/guide.css">
+</head>
+<body>
+    <div class="guide-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-logo">CBODY GO คู่มือ</a>
+            </div>
+            <nav class="nav-menu">
+                <!-- เมนูนำทางสร้างโดย guide.js -->
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content">
+                <h1>2. วิธีชำระเงิน/ถอนเงิน</h1>
+
+                <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 32px;">
+                    เข้าใช้งาน: <strong>【โปรไฟล์ส่วนตัว】→【ศูนย์การเงิน (ศูนย์การเงิน)】</strong>
+                </p>
+
+                <img src="images/1.jpg" alt="หน้าจอเข้าศูนย์การเงิน" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin: 24px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
+
+                <section>
+                    <h2>ภาพรวมศูนย์การเงิน</h2>
+                    <p>ในศูนย์การเงิน คุณจะเห็นบัญชีแยกอิสระ 2 ประเภท:</p>
+
+                    <div class="info-card" style="border-left: 4px solid #F472B6;">
+                        <h3>บัญชีเงินบาท THB (ยอดค้างชำระ THB)</h3>
+                        <p>คุณต้อง<strong>จ่ายให้แพลตฟอร์ม</strong> (ค่าคอมมิชชัน)</p>
+                    </div>
+
+                    <div class="info-card" style="border-left: 4px solid #3B82F6;">
+                        <h3>บัญชีเงินหยวน RMB (ยอดรับชำระ RMB)</h3>
+                        <p>แพลตฟอร์มช่วยรับเงิน<strong>WeChat/Alipay</strong> แล้ว<strong>โอนให้คุณ</strong></p>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <span class="alert-icon">💡</span>
+                        <div class="alert-content">
+                            สองบัญชีนี้<strong>แยกชำระกันอย่างสมบูรณ์ ไม่มีผลต่อกัน</strong> ระบบจะนับวันใหม่ทุกเช้าเวลา 6:00 น. โดยดูจากเวลา「ออเดอร์เสร็จสิ้น」
+                        </div>
+                    </div>
+                </section>
+
+                <img src="images/2.jpg" alt="หน้าจอหลักศูนย์การเงิน (แสดงบัญชี 2 ประเภท)" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin: 24px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
+
+                <section>
+                    <h2>1. คำอธิบายการชำระบัญชีเงินบาท</h2>
+                    <p style="color: var(--text-secondary);">คุณจ่ายเงินให้แพลตฟอร์ม</p>
+
+                    <h3>1. ยอดค้างชำระเงินบาทมาจากไหน?</h3>
+                    <ul>
+                        <li>สำหรับแต่ละออเดอร์ที่เสร็จสิ้น ระบบจะคำนวณ: <strong>ค่าคอมมิชชันแพลตฟอร์ม + ส่วนเงินสดที่คุณควรได้รับ</strong></li>
+                        <li>โดยทั่วไปใน<strong>เช้าวันถัดไป</strong> ออเดอร์ที่เสร็จและตรวจสอบผ่านเมื่อวานจะปรากฏใน<strong>【รายการรอชำระ (รอชำระ)】</strong></li>
+                        <li>ค่าคอมมิชชันที่เกี่ยวข้องจะสะสมเข้าไปใน<strong>ยอดค้างชำระ THB</strong>ของคุณ</li>
+                    </ul>
+
+                    <div class="alert alert-warning">
+                        <span class="alert-icon">⚠️</span>
+                        <div class="alert-content">
+                            ยอดค้างชำระเงินบาท = ยอดรวมค่าคอมมิชชันที่คุณ「ยังไม่ได้จ่ายให้แพลตฟอร์ม」
+                        </div>
+                    </div>
+
+                    <h3>2. เงินมัดจำและข้อจำกัดยอดค้างชำระ</h3>
+                    <ul>
+                        <li>คุณมีเงินมัดจำแพลตฟอร์มหนึ่งก้อน (วงเงินมัดจำ)</li>
+                        <li>เมื่อ<strong>ยอดค้างชำระ ≥ เงินมัดจำ</strong> จะแจ้งเตือน「ยอดค้างชำระเกินวงเงิน」คุณจะ<strong>ไม่สามารถออนไลน์รับงานได้</strong></li>
+                        <li>เมื่อยอดค้างชำระถึงประมาณ 80% ของเงินมัดจำ ระบบจะเตือนคุณ</li>
+                        <li>หากไม่ต้องการชำระบ่อย สามารถพูดคุยกับผู้ดูแลเพื่อ<strong>เพิ่มวงเงินมัดจำ</strong></li>
+                    </ul>
+
+                    <img src="images/3.jpg" alt="หน้าจอแจ้งเตือนยอดค้างชำระเกินวงเงิน" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin: 24px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
+
+                    <h3>3. ขั้นตอนการชำระเงินบาท</h3>
+                    <ol>
+                        <li>เปิด<strong>【โปรไฟล์ส่วนตัว】→【ศูนย์การเงิน】</strong></li>
+                        <li>ดูการ์ดสีชมพูด้านบน: <strong>ยอดค้างชำระ THB</strong></li>
+                        <li>กดปุ่มสีชมพูด้านขวา<strong>【ชำระเลย】(ชำระทันที)</strong></li>
+                        <li>โอนเงินให้แพลตฟอร์มตามจำนวนที่แจ้ง (ใช้วิธีรับเงินที่กำหนด)</li>
+                        <li>ใน App <strong>อัปโหลดภาพหน้าจอหลักฐานการโอนเงิน</strong> แล้วกดส่ง</li>
+                        <li>ระบบจะแสดงยอดค้างชำระของคุณเป็น 0 ทันที สถานะเปลี่ยนเป็น「รอตรวจสอบจากฝ่ายการเงิน」</li>
+                        <li>หลังฝ่ายการเงินตรวจสอบถูกต้อง จะทำเครื่องหมายเป็น「ชำระแล้ว」ขั้นตอนนี้<strong>ไม่มีผลต่อการรับงานปกติของคุณ</strong></li>
+                    </ol>
+
+                    <img src="images/4.jpg" alt="หน้าจอขั้นตอนการชำระเงินบาท" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin: 24px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
+                </section>
+
+                <section>
+                    <h2>2. คำอธิบายการถอนเงินบัญชีหยวน</h2>
+                    <p style="color: var(--text-secondary);">แพลตฟอร์มโอนเงินให้คุณ</p>
+
+                    <h3>1. ยอดคงเหลือ RMB คืออะไร?</h3>
+                    <ul>
+                        <li>เมื่อลูกค้าชำระผ่าน<strong>QR Code WeChat/Alipay ที่แพลตฟอร์มจัดหาให้</strong>(มัดจำ, ชำระเต็ม, ทิป ฯลฯ)</li>
+                        <li>เงินส่วนนี้จะ<strong>เข้าบัญชีแพลตฟอร์มก่อน</strong> ระบบจะบันทึกในบัญชีหยวน RMB ของคุณ</li>
+                    </ul>
+
+                    <div class="alert alert-success">
+                        <span class="alert-icon">✅</span>
+                        <div class="alert-content">
+                            ยอดคงเหลือ RMB = เงินที่แพลตฟอร์มช่วยรับแทนคุณ ยังไม่ได้โอนให้คุณ
+                        </div>
+                    </div>
+
+                    <h3>2. กฎการถอน RMB</h3>
+                    <ol>
+                        <li>ก่อนถอน ต้องกรอกข้อมูลบัญชีธนาคารไทยของคุณใน<strong>【บัญชีรับเงิน (บัญชีรับเงิน)】</strong>ก่อน</li>
+                        <li>
+                            กฎการถอน:
+                            <ul>
+                                <li><strong>จำนวนถอนขั้นต่ำ: ¥200</strong></li>
+                                <li><strong>ค่าธรรมเนียม: 1%</strong></li>
+                                <li>แปลงเป็นเงินบาทตาม<strong>อัตราแลกเปลี่ยนวันนั้น</strong></li>
+                                <li>ฝ่ายการเงินจะโอนเงินเข้าบัญชีธนาคารไทยที่คุณกรอกภายใน<strong>24 ชั่วโมง</strong></li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <img src="images/5.jpg" alt="หน้าจอตั้งค่าบัญชีรับเงิน" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin: 24px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
+
+                    <h3>3. ขั้นตอนการถอน RMB</h3>
+                    <ol>
+                        <li>เปิด<strong>【โปรไฟล์ส่วนตัว】→【ศูนย์การเงิน】</strong></li>
+                        <li>ยืนยันว่าคุณได้ตั้งค่า<strong>【บัญชีรับเงิน (บัญชีรับเงิน)】</strong>เรียบร้อยแล้ว</li>
+                        <li>ในการ์ดสีน้ำเงินดู<strong>ยอดคงเหลือ RMB (ยอดรับชำระ RMB)</strong></li>
+                        <li>กดปุ่มสีน้ำเงินด้านขวา<strong>【ถอนเงิน】(ขอถอนเงิน)</strong></li>
+                        <li><strong>รองรับเฉพาะการถอนเต็มจำนวน</strong> ยอดเงินต้อง <strong>≥ ¥200</strong> ยืนยันส่ง</li>
+                        <li>รอฝ่ายการเงินโอนเงิน โดยปกติ<strong>จะดำเนินการภายใน 24 ชั่วโมง</strong></li>
+                        <li>คุณสามารถตรวจสอบสถานะการถอนแต่ละครั้งได้ที่<strong>【บันทึกการถอน/ชำระ】</strong>สลับไปแถบ「ถอนเงิน」</li>
+                    </ol>
+
+                    <img src="images/6.jpg" alt="หน้าจอขั้นตอนการถอน RMB" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin: 24px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
+                </section>
+
+                <section>
+                    <h2>3. คำอธิบายหน้ารอชำระ (รอชำระ)</h2>
+                    <p>เส้นทาง: <strong>【ศูนย์การเงิน】→【รอชำระ】</strong></p>
+
+                    <p>ที่นี่สามารถดูได้ 2 ส่วน:</p>
+                    <ul>
+                        <li>ด้านบน: <strong>「ยอดรอชำระ THB」</strong> → ค่าคอมมิชชันเงินบาทที่กำลังตรวจสอบ</li>
+                        <li>ด้านบน: <strong>「แพลตฟอร์มรับแทน (RMB)」</strong> → RMB ที่แพลตฟอร์มรับแทนแล้วแต่ยังไม่ดำเนินการ</li>
+                    </ul>
+
+                    <p>รายการแต่ละรายการในรายการด้านล่างคือหนึ่งออเดอร์:</p>
+                    <ul>
+                        <li>สถานะเป็น<strong>「รอตรวจสอบ」</strong>: ฝ่ายการเงินกำลังตรวจสอบ</li>
+                        <li>สลับไปแถบ<strong>「ประวัติ」</strong>: สามารถดูบันทึกที่ชำระเสร็จแล้ว</li>
+                    </ul>
+
+                    <img src="images/7.jpg" alt="หน้าจอหน้ารอชำระ" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin: 24px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
+
+                    <div class="alert alert-info">
+                        <span class="alert-icon">💡</span>
+                        <div class="alert-content">
+                            แนะนำให้เปิด「รอชำระ」หลังเลิกงานทุกวัน หากพบจำนวนเงินมีข้อสงสัย สามารถแจ้งหมายเลขออเดอร์และสถานการณ์ในกลุ่มงาน ให้ผู้ดูแลช่วยตรวจสอบ
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4. บันทึกการถอน/ชำระ</h2>
+                    <p>เส้นทาง: <strong>【ศูนย์การเงิน】→【รายการถอนเงิน/ชำระเงิน】</strong></p>
+
+                    <div class="info-card">
+                        <h3>แถบ「ชำระเงิน」</h3>
+                        <p>บันทึกการชำระเงินบาทที่คุณจ่ายให้แพลตฟอร์ม</p>
+                        <ul>
+                            <li>สถานะ「จ่ายแล้ว」= แพลตฟอร์มยืนยันแล้ว</li>
+                            <li>สถานะ「ถูกปฏิเสธ」= ถูกปฏิเสธ สามารถดูเหตุผลในหมายเหตุ</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>แถบ「ถอนเงิน」</h3>
+                        <p>บันทึกการถอน RMB ที่แพลตฟอร์มโอนให้คุณ</p>
+                        <ul>
+                            <li>แสดงจำนวนเงินถอน อัตราแลกเปลี่ยน ค่าธรรมเนียม จำนวนเงินบาทหลังแปลง ฯลฯ</li>
+                        </ul>
+                    </div>
+
+                    <img src="images/8.jpg" alt="หน้าจอบันทึกการถอน/ชำระ" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; margin: 24px 0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);">
+                </section>
+
+                <section class="faq-section">
+                    <h2>คำถามที่พบบ่อย</h2>
+
+                    <details>
+                        <summary>Q1: ทำไมยอดค้างชำระเงินบาทถึงเพิ่มมากขึ้นเรื่อยๆ?</summary>
+                        <p>A: นี่คือค่าคอมมิชชันสะสมที่คุณ<strong>ยังไม่ได้จ่ายให้แพลตฟอร์ม</strong> มาจากออเดอร์ที่เสร็จสิ้นทุกวัน หลังตรวจสอบรวมในเช้าวันถัดไปจะเข้าไปในบัญชียอดค้างชำระ</p>
+                    </details>
+
+                    <details>
+                        <summary>Q2: หลังยอดค้างชำระเต็มเงินมัดจำแล้ว ยังสามารถรับงานได้ไหม?</summary>
+                        <p>A: ไม่ได้ เมื่อยอดค้างชำระ ≥ เงินมัดจำจะทริกเกอร์การควบคุมความเสี่ยง คุณต้องชำระส่วนหนึ่งผ่าน【ชำระเลย】ก่อนจึงจะออนไลน์ต่อได้</p>
+                    </details>
+
+                    <details>
+                        <summary>Q3: หลังขอถอน RMB แล้ว เงินเข้าบัญชีใช้เวลานานแค่ไหน?</summary>
+                        <p>A: โดยทั่วไปฝ่ายการเงินจะโอนเงินเข้าบัญชีธนาคารไทยที่คุณผูกไว้ภายใน<strong>24 ชั่วโมง</strong> วันหยุดอาจล่าช้าเล็กน้อย</p>
+                    </details>
+
+                    <details>
+                        <summary>Q4: สถานะการถอน/ชำระอยู่ใน「กำลังตรวจสอบ」จะมีผลต่อการรับงานไหม?</summary>
+                        <p>A: ไม่มีผล ตราบใดที่ยอดค้างชำระของคุณไม่เกินข้อจำกัดเงินมัดจำ ก็สามารถรับงานได้ตามปกติ</p>
+                    </details>
+
+                    <details>
+                        <summary>Q5: พบว่าจำนวนเงินรอชำระไม่ถูกต้อง ต้องทำอย่างไร?</summary>
+                        <p>A: กรุณาจดบันทึก<strong>ชื่อออเดอร์และหมายเลขออเดอร์</strong> แจ้งสถานการณ์ในกลุ่มงานหรือติดต่อฝ่ายบริการลูกค้า แพลตฟอร์มจะช่วยตรวจสอบและปรับให้</p>
+                    </details>
+
+                    <details>
+                        <summary>Q6: สามารถใช้ยอดคงเหลือ RMB หักลบยอดค้างชำระเงินบาทได้ไหม?</summary>
+                        <p>A: ไม่สามารถหักลบโดยตรงได้ เพราะสองอย่างนี้เป็นสกุลเงินต่างกัน ต้องชำระแยกกัน แต่คุณสามารถถอน RMB ก่อน แปลงเป็นเงินบาทแล้วค่อยชำระให้แพลตฟอร์ม</p>
+                    </details>
+
+                    <details>
+                        <summary>Q7: หลังอัปโหลดหลักฐานการชำระแล้วถูกปฏิเสธ ต้องทำอย่างไร?</summary>
+                        <p>A: ดูเหตุผลที่ถูกปฏิเสธ (ในคอลัมน์หมายเหตุ) โดยปกติคือจำนวนเงินโอนไม่ตรงหรือหลักฐานไม่ชัด กรุณาอัปโหลดใหม่ตามที่กำหนด</p>
+                    </details>
+                </section>
+
+                <nav class="pagination">
+                    <a href="../1-rmb-payment/index.html" class="prev">บทก่อนหน้า</a>
+                    <a href="../7-safety/index.html" class="next">บทถัดไป</a>
+                </nav>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/guide.js"></script>
+</body>
+</html>
