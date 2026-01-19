@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // { title: '7. ความปลอดภัยและการร้องเรียน', path: '/guide/7-safety/index.html', id: '7-safety' },
             // { title: '8. คำถามที่พบบ่อย', path: '/guide/8-faq/index.html', id: '8-faq' }
             { title: '3. กฎคะแนนความน่าเชื่อถือ & อัตราการจอง', path: '/guide/9-trust-score/index.html', id: '9-trust-score' },
-            { title: '4. คำถามที่พบบ่อย (必读)', path: '/guide/10-faq-must-read/index.html', id: '10-faq-must-read' }
+            { title: '4. คำถามที่พบบ่อย', path: '/guide/10-faq-must-read/index.html', id: '10-faq-must-read' }
         ];
 
         // 获取当前页面路径
