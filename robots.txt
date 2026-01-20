@@ -1,0 +1,28 @@
+# robots.txt for cbodyspa.com
+# Allow all search engines to crawl the site
+
+User-agent: *
+
+# Allow main pages
+Allow: /
+Allow: /index.html
+Allow: /support.html
+Allow: /terms.html
+Allow: /policy.html
+
+# Block pages that don't need SEO
+Disallow: /guide/
+Disallow: /expert.html
+Disallow: /expert-zh.html
+Disallow: /expert-th.html
+Disallow: /service-standards.html
+Disallow: /service-standards-th.html
+Disallow: /outcall-massage-bangkok/
+Disallow: /config/
+Disallow: /docs/
+
+# Allow images for Google Image Search
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://cbodyspa.com/sitemap.xml
