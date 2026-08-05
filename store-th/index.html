@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ร้านอุปกรณ์สำหรับผู้เชี่ยวชาญ | CBODY</title>
+    <meta name="description" content="เลือกดูอุปกรณ์ทำงาน เครื่องแบบ ถุงน่อง และของใช้สำหรับผู้เชี่ยวชาญ CBODY ติดต่อแอดมินผ่าน LINE เพื่อสั่งซื้อ">
+    <meta name="keywords" content="CBODY, ร้านอุปกรณ์ผู้เชี่ยวชาญ, เครื่องแบบ, อุปกรณ์ทำงาน">
+    <meta name="author" content="CBODY Inc.">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="theme-color" content="#F9F7F5">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cbodyspa.com/store-th/">
+    <meta property="og:title" content="ร้านอุปกรณ์สำหรับผู้เชี่ยวชาญ | CBODY">
+    <meta property="og:description" content="เลือกสินค้า แล้วส่งรหัสและจำนวนให้แอดมินผ่าน LINE">
+    <meta property="og:image" content="https://cbodyspa.com/images/logo.webp">
+    <meta property="og:site_name" content="CBODY">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ร้านอุปกรณ์สำหรับผู้เชี่ยวชาญ | CBODY">
+    <meta name="twitter:description" content="เลือกสินค้า แล้วส่งรหัสและจำนวนให้แอดมินผ่าน LINE">
+    <meta name="twitter:image" content="https://cbodyspa.com/images/logo.webp">
+
+    <link rel="canonical" href="https://cbodyspa.com/store-th/">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "ร้านอุปกรณ์สำหรับผู้เชี่ยวชาญ CBODY",
+        "description": "หน้ารวมอุปกรณ์ทำงานสำหรับผู้เชี่ยวชาญ CBODY",
+        "url": "https://cbodyspa.com/store-th/",
+        "inLanguage": "th"
+    }
+    </script>
+</head>
+
+<body>
+    <header class="store-header">
+        <div class="header-inner">
+            <a class="brand" href="../expert-th.html" aria-label="CBODY Expert">
+                <span class="brand-mark"><img src="../images/logo.webp" alt="CBODY"></span>
+                <span class="brand-copy">
+                    <strong>CBODY</strong>
+                    <small>EXPERT STORE</small>
+                </span>
+            </a>
+            <button class="line-mini" id="headerLineButton" type="button">
+                <span class="service-dot">?</span>
+                <span>ติดต่อแอดมิน</span>
+            </button>
+        </div>
+
+        <div class="hero">
+            <div class="eyebrow"><span></span> สำหรับผู้เชี่ยวชาญ CBODY</div>
+            <h1>อุปกรณ์สำหรับวันทำงาน<br><em>เลือกสิ่งที่เหมาะกับคุณ</em></h1>
+            <p>สินค้าและเครื่องแบบที่คัดสรรสำหรับผู้เชี่ยวชาญ CBODY</p>
+        </div>
+    </header>
+
+    <nav class="category-bar" aria-label="หมวดหมู่สินค้า">
+        <div class="category-scroll" id="categoryList"></div>
+    </nav>
+
+    <main class="store-main">
+        <div class="section-heading">
+            <div>
+                <p class="section-kicker">รายการสินค้า</p>
+                <h2 id="categoryTitle">สินค้าทั้งหมด</h2>
+            </div>
+            <span class="product-count" id="productCount" aria-live="polite"></span>
+        </div>
+
+        <section class="product-grid" id="productGrid" aria-live="polite"></section>
+
+        <section class="empty-state" id="emptyState" hidden>
+            <span>♡</span>
+            <h2>ยังไม่มีสินค้าในหมวดนี้</h2>
+            <p>แอดมินกำลังเตรียมสินค้าใหม่ กรุณากลับมาดูอีกครั้ง</p>
+        </section>
+
+        <section class="load-error" id="loadError" hidden>
+            <h2>ไม่สามารถแสดงสินค้าได้</h2>
+            <p>กรุณารีเฟรชหน้า หรือติดต่อแอดมินทาง LINE</p>
+            <button type="button" id="retryButton">ลองอีกครั้ง</button>
+        </section>
+    </main>
+
+    <footer class="store-footer">
+        <p>CBODY Expert Store · หน้านี้ใช้สำหรับแสดงสินค้าเท่านั้น</p>
+    </footer>
+
+    <dialog class="product-dialog" id="productDialog" aria-labelledby="dialogTitle">
+        <div class="dialog-shell">
+            <button class="dialog-close" id="dialogClose" type="button" aria-label="ปิด">×</button>
+
+            <div class="dialog-gallery">
+                <div class="main-image-wrap">
+                    <button class="gallery-arrow gallery-prev" id="galleryPrev" type="button" aria-label="รูปก่อนหน้า">‹</button>
+                    <img id="dialogImage" src="" alt="">
+                    <button class="gallery-arrow gallery-next" id="galleryNext" type="button" aria-label="รูปถัดไป">›</button>
+                    <span class="image-counter" id="imageCounter"></span>
+                </div>
+                <div class="thumbnail-list" id="thumbnailList"></div>
+            </div>
+
+            <div class="dialog-content">
+                <div class="product-heading">
+                    <span class="dialog-code" id="dialogCode"></span>
+                    <h2 id="dialogTitle"></h2>
+                    <p class="dialog-description" id="dialogDescription"></p>
+                    <strong class="dialog-price" id="dialogPrice"></strong>
+                </div>
+
+                <div class="option-group" id="colorGroup" hidden>
+                    <div class="option-label"><span>สี / แบบ</span><strong id="selectedColor"></strong></div>
+                    <div class="option-list option-list-visual" id="colorOptions"></div>
+                </div>
+
+                <div class="option-group" id="sizeGroup" hidden>
+                    <div class="option-label"><span>ขนาด</span><strong id="selectedSize"></strong></div>
+                    <div class="option-list" id="sizeOptions"></div>
+                </div>
+
+                <div class="quantity-row">
+                    <div>
+                        <span>จำนวน</span>
+                        <small>ระบุจำนวนที่ต้องการ</small>
+                    </div>
+                    <div class="quantity-stepper" aria-label="จำนวนสินค้า">
+                        <button id="quantityMinus" type="button" aria-label="ลดจำนวน">−</button>
+                        <output id="quantityValue">1</output>
+                        <button id="quantityPlus" type="button" aria-label="เพิ่มจำนวน">＋</button>
+                    </div>
+                </div>
+
+                <button class="purchase-primary" id="purchaseButton" type="button">สั่งซื้อสินค้านี้</button>
+                <p class="purchase-hint">แอดมินจะยืนยันราคา สินค้า และการจัดส่งอีกครั้ง</p>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="contact-dialog" id="contactDialog" aria-labelledby="contactDialogTitle">
+        <div class="contact-dialog-shell">
+            <button class="contact-dialog-close" id="contactDialogClose" type="button" aria-label="ปิด">×</button>
+            <span class="contact-line-mark">LINE</span>
+            <p class="contact-eyebrow" id="contactEyebrow">ติดต่อ CBODY</p>
+            <h2 id="contactDialogTitle">ติดต่อแอดมิน</h2>
+            <p class="contact-dialog-text" id="contactDialogText">สอบถามข้อมูลสินค้าและการสั่งซื้อกับแอดมินผ่าน LINE</p>
+
+            <div class="contact-summary" id="contactSummary" hidden>
+                <span>รายการที่เลือก</span>
+                <strong id="contactProductTitle"></strong>
+                <p id="contactProductMeta"></p>
+            </div>
+
+            <button class="line-id-copy" id="copyLineId" type="button">
+                <span>LINE ID</span>
+                <strong id="dialogLineId">@cbody</strong>
+                <i>คัดลอก</i>
+            </button>
+
+            <button class="contact-primary" id="confirmLineButton" type="button">
+                <span class="line-bubble line-bubble-white">LINE</span>
+                <span id="confirmLineText">เปิด LINE</span>
+            </button>
+            <button class="contact-cancel" id="contactCancel" type="button">ไว้ภายหลัง</button>
+        </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <noscript>
+        <div class="noscript">กรุณาเปิด JavaScript เพื่อดูรายการสินค้า</div>
+    </noscript>
+
+    <script src="assets/app.js" defer></script>
+</body>
+
+</html>
