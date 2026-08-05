@@ -17,7 +17,7 @@
       "category": "daily",
       "title": "เซ็ตของใช้ส่วนตัวสำหรับวันทำงาน",
       "price": 390,
-      "images": ["images/products/daily-set.webp"],
+      "images": ["/store-th/images/products/daily-set.webp"],
       "description": "แก้วเก็บอุณหภูมิ กระเป๋าใส่ของ และผ้าขนหนูนุ่มในชุดเดียว"
     },
     {
@@ -25,7 +25,7 @@
       "category": "daily",
       "title": "เซ็ตขวดแบ่งและกระเป๋าพกพา",
       "price": 290,
-      "images": ["images/products/bottle-set.webp"],
+      "images": ["/store-th/images/products/bottle-set.webp"],
       "description": "ขวดปั๊ม ขวดสเปรย์ และกระเป๋าซิปขนาดกะทัดรัด"
     },
     {
@@ -34,8 +34,8 @@
       "title": "ชุดยูนิฟอร์มผู้เชี่ยวชาญทรงไขว้",
       "price": 790,
       "images": [
-        "images/products/uniform-cream.webp",
-        "images/products/uniform-black.webp"
+        "/store-th/images/products/uniform-cream.webp",
+        "/store-th/images/products/uniform-black.webp"
       ],
       "description": "ผ้าเนื้อนุ่ม ระบายอากาศดี ทรงสุภาพพร้อมกางเกงขายาว",
       "colors": [
@@ -49,7 +49,7 @@
       "category": "stockings",
       "title": "ถุงน่องเนื้อบางแบบยาว",
       "price": 150,
-      "images": ["images/products/stockings.webp"],
+      "images": ["/store-th/images/products/stockings.webp"],
       "description": "เนื้อสัมผัสเรียบเนียน ขอบนุ่ม ใส่สบายตลอดวัน",
       "colors": [
         { "label": "สีเนื้อ" },
@@ -63,7 +63,7 @@
       "category": "other",
       "title": "เซ็ตเครื่องประดับเรียบหรู",
       "price": 240,
-      "images": ["images/products/accessories.webp"],
+      "images": ["/store-th/images/products/accessories.webp"],
       "description": "กิ๊บติดผม ต่างหูมุก และยางรัดผมโทนสุภาพ"
     },
     {
@@ -71,7 +71,7 @@
       "category": "other",
       "title": "กระเป๋าจัดระเบียบอุปกรณ์ทำงาน",
       "price": 590,
-      "images": ["images/products/work-bag.webp"],
+      "images": ["/store-th/images/products/work-bag.webp"],
       "description": "ช่องแบ่งหลายขนาด พกอุปกรณ์และผ้าขนหนูได้เป็นระเบียบ"
     },
     {
@@ -79,7 +79,7 @@
       "category": "other",
       "title": "รองเท้าทำงานพื้นกันลื่น",
       "price": 450,
-      "images": ["images/products/work-shoes.webp"],
+      "images": ["/store-th/images/products/work-shoes.webp"],
       "description": "น้ำหนักเบา หัวปิด พื้นนุ่มและเช็ดทำความสะอาดง่าย",
       "sizes": ["36", "37", "38", "39", "40"]
     }

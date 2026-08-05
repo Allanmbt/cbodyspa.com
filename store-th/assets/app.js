@@ -1,18 +1,18 @@
 (function () {
     'use strict';
 
-    var DATA_URL = 'data/products.json';
+    var DATA_URL = '/store-th/data/products.json';
     var data = null;
     var activeCategory = 'all';
     var activeProduct = null;
     var activeImage = 0;
     var activeColor = 0;
     var activeSize = 0;
-    var quantity = 1;
     var lastTrigger = null;
     var contactTrigger = null;
     var contactMode = 'general';
     var toastTimer = null;
+    var galleryTimer = null;
 
     var elements = {
         categoryList: document.getElementById('categoryList'),
@@ -39,9 +39,6 @@
         sizeGroup: document.getElementById('sizeGroup'),
         sizeOptions: document.getElementById('sizeOptions'),
         selectedSize: document.getElementById('selectedSize'),
-        quantityMinus: document.getElementById('quantityMinus'),
-        quantityPlus: document.getElementById('quantityPlus'),
-        quantityValue: document.getElementById('quantityValue'),
         purchaseButton: document.getElementById('purchaseButton'),
         headerLineButton: document.getElementById('headerLineButton'),
         contactDialog: document.getElementById('contactDialog'),
@@ -147,8 +144,8 @@
         elements.emptyState.hidden = products.length !== 0;
 
         elements.productGrid.innerHTML = products.map(function (product) {
-            var dots = product.images.length > 1
-                ? '<span class="card-gallery-dots" aria-hidden="true">' + product.images.map(function (_, index) { return '<i' + (index === 0 ? ' class="is-active"' : '') + '></i>'; }).join('') + '</span>'
+            var galleryLabel = product.images.length > 1
+                ? '<span class="card-gallery-count" aria-label="' + product.images.length + ' รูป"><b>' + product.images.length + '</b> รูป</span>'
                 : '';
 
             return '<article class="product-card">' +
@@ -156,7 +153,7 @@
                     '<span class="product-image-wrap">' +
                         '<img src="' + escapeHtml(product.images[0]) + '" alt="" loading="lazy" width="960" height="960">' +
                         '<span class="product-code">' + escapeHtml(product.id) + '</span>' +
-                        dots +
+                        galleryLabel +
                     '</span>' +
                     '<span class="product-card-body">' +
                         '<strong class="product-title">' + escapeHtml(product.title) + '</strong>' +
@@ -186,23 +183,22 @@
         activeImage = 0;
         activeColor = 0;
         activeSize = 0;
-        quantity = 1;
 
         elements.dialogCode.textContent = 'รหัส ' + activeProduct.id;
         elements.dialogTitle.textContent = activeProduct.title;
         elements.dialogDescription.textContent = activeProduct.description || '';
         elements.dialogDescription.hidden = !activeProduct.description;
         elements.dialogPrice.textContent = formatPrice(activeProduct.price);
-        elements.quantityValue.textContent = quantity;
 
         renderGallery();
         renderOptions();
-        updateQuantityButtons();
         elements.dialog.showModal();
+        startGalleryAutoplay();
         document.body.classList.add('dialog-open');
     }
 
     function closeProduct() {
+        stopGalleryAutoplay();
         elements.dialog.close();
         document.body.classList.remove('dialog-open');
         if (lastTrigger) {
@@ -214,6 +210,9 @@
         var images = activeProduct.images;
         elements.dialogImage.src = images[activeImage];
         elements.dialogImage.alt = '';
+        elements.dialogImage.classList.remove('is-changing');
+        void elements.dialogImage.offsetWidth;
+        elements.dialogImage.classList.add('is-changing');
         elements.imageCounter.textContent = images.length > 1 ? (activeImage + 1) + ' / ' + images.length : '';
         elements.imageCounter.hidden = images.length < 2;
         elements.galleryPrev.hidden = images.length < 2;
@@ -225,7 +224,22 @@
         }).join('');
     }
 
-    function setActiveImage(index) {
+    function stopGalleryAutoplay() {
+        window.clearInterval(galleryTimer);
+        galleryTimer = null;
+    }
+
+    function startGalleryAutoplay() {
+        stopGalleryAutoplay();
+        if (!activeProduct || activeProduct.images.length < 2 || document.hidden) {
+            return;
+        }
+        galleryTimer = window.setInterval(function () {
+            setActiveImage(activeImage + 1, false);
+        }, 2800);
+    }
+
+    function setActiveImage(index, restartAutoplay) {
         var length = activeProduct.images.length;
         activeImage = (index + length) % length;
         if (activeProduct.colors) {
@@ -238,6 +252,9 @@
             }
         }
         renderGallery();
+        if (restartAutoplay) {
+            startGalleryAutoplay();
+        }
     }
 
     function renderOptions() {
@@ -266,23 +283,12 @@
         }
     }
 
-    function updateQuantity(change) {
-        quantity = Math.min(99, Math.max(1, quantity + change));
-        elements.quantityValue.textContent = quantity;
-        updateQuantityButtons();
-    }
-
-    function updateQuantityButtons() {
-        elements.quantityMinus.disabled = quantity <= 1;
-        elements.quantityPlus.disabled = quantity >= 99;
-    }
-
     function buildOrderMessage() {
         var lines = [
             'สวัสดีค่ะ สนใจสั่งซื้อสินค้า',
             'รหัส: ' + activeProduct.id,
             'สินค้า: ' + activeProduct.title,
-            'จำนวน: ' + quantity
+            'จำนวนที่ต้องการ: กรุณาระบุในแชต'
         ];
 
         if (activeProduct.colors && activeProduct.colors.length > 1) {
@@ -295,7 +301,7 @@
     }
 
     function buildOrderMeta() {
-        var details = ['รหัส ' + activeProduct.id, formatPrice(activeProduct.price), 'จำนวน ' + quantity];
+        var details = ['รหัส ' + activeProduct.id, formatPrice(activeProduct.price)];
         if (activeProduct.colors && activeProduct.colors.length > 1) {
             details.push(activeProduct.colors[activeColor].label);
         }
@@ -314,10 +320,11 @@
         contactTrigger = trigger;
 
         if (mode === 'product') {
+            stopGalleryAutoplay();
             elements.dialog.close();
             elements.contactEyebrow.textContent = 'สั่งซื้อผ่านแอดมิน';
             elements.contactDialogTitle.textContent = 'ยืนยันรายการที่เลือก';
-            elements.contactDialogText.textContent = 'ระบบจะคัดลอกข้อมูลสินค้าเพื่อให้คุณนำไปวางในแชต LINE';
+            elements.contactDialogText.textContent = 'ระบบจะคัดลอกข้อมูลสินค้า กรุณาแจ้งจำนวนที่ต้องการในแชต LINE';
             elements.contactSummary.hidden = false;
             elements.contactProductTitle.textContent = activeProduct.title;
             elements.contactProductMeta.textContent = buildOrderMeta();
@@ -371,7 +378,7 @@
     elements.thumbnailList.addEventListener('click', function (event) {
         var button = event.target.closest('[data-image]');
         if (button) {
-            setActiveImage(Number(button.dataset.image));
+            setActiveImage(Number(button.dataset.image), true);
         }
     });
 
@@ -387,6 +394,7 @@
         }
         renderGallery();
         renderOptions();
+        startGalleryAutoplay();
     });
 
     elements.sizeOptions.addEventListener('click', function (event) {
@@ -408,13 +416,12 @@
         closeProduct();
     });
     elements.dialog.addEventListener('close', function () {
+        stopGalleryAutoplay();
         document.body.classList.toggle('dialog-open', elements.contactDialog.open);
     });
 
-    elements.galleryPrev.addEventListener('click', function () { setActiveImage(activeImage - 1); });
-    elements.galleryNext.addEventListener('click', function () { setActiveImage(activeImage + 1); });
-    elements.quantityMinus.addEventListener('click', function () { updateQuantity(-1); });
-    elements.quantityPlus.addEventListener('click', function () { updateQuantity(1); });
+    elements.galleryPrev.addEventListener('click', function () { setActiveImage(activeImage - 1, true); });
+    elements.galleryNext.addEventListener('click', function () { setActiveImage(activeImage + 1, true); });
     elements.purchaseButton.addEventListener('click', function () {
         openContactDialog('product', elements.purchaseButton);
     });
@@ -440,6 +447,14 @@
         copyText(data.store.lineId).then(function () { showToast('คัดลอก LINE ID แล้ว'); });
     });
     elements.retryButton.addEventListener('click', loadProducts);
+
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            stopGalleryAutoplay();
+        } else if (elements.dialog.open) {
+            startGalleryAutoplay();
+        }
+    });
 
     loadProducts();
 })();

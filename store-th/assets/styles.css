@@ -403,28 +403,24 @@ a:focus-visible {
     backdrop-filter: blur(8px);
 }
 
-.card-gallery-dots {
+.card-gallery-count {
     position: absolute;
     right: 10px;
     bottom: 9px;
-    display: flex;
-    gap: 4px;
-    padding: 5px 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 5px 8px;
+    color: #FFFFFF;
     border-radius: 99px;
-    background: rgba(39, 49, 47, 0.25);
+    background: rgba(39, 49, 47, 0.48);
+    font-size: 9px;
+    font-weight: 600;
     backdrop-filter: blur(5px);
 }
 
-.card-gallery-dots i {
-    width: 4px;
-    height: 4px;
-    border-radius: 99px;
-    background: rgba(255, 255, 255, 0.55);
-}
-
-.card-gallery-dots i.is-active {
-    width: 10px;
-    background: #FFFFFF;
+.card-gallery-count b {
+    font-size: 11px;
 }
 
 .product-card-body {
@@ -594,6 +590,15 @@ a:focus-visible {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.main-image-wrap > img.is-changing {
+    animation: galleryFade 320ms ease;
+}
+
+@keyframes galleryFade {
+    from { opacity: 0.55; transform: scale(1.012); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .gallery-arrow {
@@ -772,64 +777,6 @@ a:focus-visible {
 
 .color-dot-1 { background: #282828; }
 .color-dot-2 { background: #7B5849; }
-
-.quantity-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 24px;
-    padding: 16px;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    background: #FBFAF9;
-}
-
-.quantity-row > div:first-child span {
-    display: block;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.quantity-row > div:first-child small {
-    display: block;
-    margin-top: 2px;
-    color: var(--muted);
-    font-size: 10px;
-}
-
-.quantity-stepper {
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: #FFFFFF;
-}
-
-.quantity-stepper button {
-    display: grid;
-    width: 40px;
-    height: 40px;
-    place-items: center;
-    color: var(--primary-dark);
-    border: 0;
-    background: transparent;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.quantity-stepper button:disabled {
-    color: #C9CECC;
-    cursor: not-allowed;
-}
-
-.quantity-stepper output {
-    min-width: 34px;
-    color: var(--ink);
-    font-size: 14px;
-    font-weight: 800;
-    text-align: center;
-}
 
 .purchase-primary {
     width: 100%;
